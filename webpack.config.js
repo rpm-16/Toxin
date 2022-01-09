@@ -59,7 +59,10 @@ module.exports = {
       // Pug
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        // loader: 'pug-loader',
+        oneOf: [
+          { use: ['pug-loader?pretty=true']}
+               ]
       },
     // Copy
     // {
@@ -102,7 +105,8 @@ module.exports = {
 
   ...PAGES.map(page => new HtmlWebpackPlugin({
     template: `${PAGES_DIR}/${PAGES_FOLDERS}/${page}`,
-    filename: `./${page.replace(/\.pug/,'.html')}`
+    filename: `./${page.replace(/\.pug/,'.html')}`, 
+    pretty: true,
   }))
 
   ],
