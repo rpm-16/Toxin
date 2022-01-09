@@ -1,100 +1,109 @@
-// PavelRyzhkov - own config
+// PavelRyzhkov's own configue
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path');
 const fs = require('fs');
-const webpack = require('webpack'); //to access built-in plugins
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 
+const PAGES_DIR = `./src/pug/pages/`;
+const PAGES_FOLDERS = fs.readdirSync(PAGES_DIR);
 const getFiles = (dir, fileType) => {
-    return dir.map(folder => {
-      const folderPath = `${PAGES_DIR}/${folder}`;
-      const folderFiles = fs.readdirSync(folderPath);
-      const pageFile = folderFiles.find(fileName => fileName.endsWith(`.${fileType}`));
-      return pageFile;});}
-const PATHS = {
-    src: path.resolve(__dirname, 'src'),
-    dist: path.resolve(__dirname, 'dist'),
-    }
-const PAGES_DIR = `${PATHS.src}/pug/pages`;
-const PAGE_FOLDERS = fs.readdirSync(PAGES_DIR);
-const PAGES = getFiles(PAGE_FOLDERS, 'pug');
+  return dir.map(folder => {
+    const folderPath = `${PAGES_DIR}/${folder}`;
+    const folderFiles = fs.readdirSync(folderPath);
+    const pageFile = folderFiles.find(fileName => fileName.endsWith(`.${fileType}`));
+    return pageFile;});}
+const PAGES = getFiles(PAGES_FOLDERS, 'pug');
+// console.log(PAGES);
+
 
 module.exports = {
-   entry: './src/index.js',
-   devtool: 'eval-source-map',
-   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: `./js/[name].min.js`,
-    },
+  entry: '/src/index.js',
+  devtool: 'eval-source-map',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'js/[name]index.js',
+  },
 
   module: {
     rules: [
-    // Pug 
-        {
-        test: /\.pug$/,
-        oneOf: [
-          { use: ['pug-loader?pretty=true']}
-               ]
-        },
-
+    // html
+    { 
+      test: /\.html$/i,
+      loader: "html-loader",
+      },
     // Bubel
-        {
-        test: /\.m?js$/,
-        loader: 'babel-loader',
-        exclude: /(node_modules|bower_components)/,
-        },
-
-    // Copy
     {
-        test: /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/,
-        use: [
-          {
-            loader: 'file-loader?name=./fonts/[name].[ext]'
-          },
-        ],
-      }, 
-    
-    // sass
-    {
-      test: /\.s[ac]ss$/i,
-      use: [
-        // Creates `style` nodes from JS strings
-        MiniCssExtractPlugin.loader,
-        // Translates CSS into CommonJS
-        "css-loader",
-        // Compiles Sass to CSS
-        "sass-loader",
-      ],
-    },
-     
-    // css
+      test: /\.m?js$/,
+      loader: 'babel-loader',
+      exclude: /(node_modules|bower_components)/,
+      },
+    // styles
     {
       test: /\.css$/i,
       use: [MiniCssExtractPlugin.loader, "css-loader"],
-    },
-    //   end rules
-    ],
-  },
+      },
+    // sass
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          MiniCssExtractPlugin.loader,
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
+      // Pug
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+      },
+    // Copy
+    // {
+    //   test: /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/,
+    //   use: [
+    //     {
+    //       loader: 'file-loader?name=./fonts/[name].[ext]'
+    //     },
+    //   ],
+    // }, 
+
+  // End rules  
+  ],
+},
+
+    
+
 
   plugins: [
-  // css new file
-  new MiniCssExtractPlugin({
-    filename: `./css/[name].css`,
-  }),
+    new HtmlWebpackPlugin(),
+
+    // css new file
+    new MiniCssExtractPlugin({
+      filename: `./css/[name].css`,
+    }),
 
   // copywebpack
-  new CopyWebpackPlugin({
+  new CopyPlugin({
     patterns: [
-    { from: `${PATHS.src}/fonts`, to: `fonts` },
-    { from: `${PATHS.src}/img`, to: `img` },
-    { from: `${PATHS.src}/favicons`, to: 'favicons' },
+    { from: `./src/fonts`, to: `fonts` },
+    { from: `./src/img`, to: `img` },
+    { from: `./src/favicons`, to: 'favicons' },
   ]}),
+  // Pug
+  // new HtmlWebpackPlugin({
+  //   template: `.src/pug/pages/colorstype/colorstrype.pug`,
+  //   filename: './colorstype.html',
+  //   inject: true
+  // }),
 
-  // pug
-    ...PAGES.map((page, index) => new HtmlWebpackPlugin({
-        template: `${PAGES_DIR}/${PAGE_FOLDERS[index]}/${page}`,
-        filename: `./${page.replace(/\.pug/,'.html')}`,
-        })),
-  ]
+  ...PAGES.map(page => new HtmlWebpackPlugin({
+    template: `${PAGES_DIR}/${PAGES_FOLDERS}/${page}`,
+    filename: `./${page.replace(/\.pug/,'.html')}`
+  }))
+
+  ],
 };

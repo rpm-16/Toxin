@@ -1,0 +1,8 @@
+mixin list-colors(id, list)
+ ul(id=id)
+    for item in list 
+     li.list_item
+        .itemblock_color(style=`background-color: ${item.color}`)
+        .itemdescript
+            p.colors-list__title= item.name
+            = item.hex
