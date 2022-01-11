@@ -1,0 +1,12 @@
+mixin input(options = {})
+    - var {label, type, inputClass, placeholder } = options
+    
+    .form-group
+        label.form-group_wrapper
+            .label(class='form-group__title')
+                = label
+                .form-group__type
+                    = type
+
+        .input_wrapper
+            input(class= inputClass, placeholder= placeholder)          

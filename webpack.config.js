@@ -6,14 +6,18 @@ const path = require('path');
 const fs = require('fs');
 const webpack = require('webpack');
 
-const PAGES_DIR = `./src/pug/pages/`;
+const PAGES_DIR = `./src/pug/pages`;
 const PAGES_FOLDERS = fs.readdirSync(PAGES_DIR);
+// console.log(PAGES_FOLDERS);
+
 const getFiles = (dir, fileType) => {
   return dir.map(folder => {
-    const folderPath = `${PAGES_DIR}/${folder}`;
+    const folderPath = `${PAGES_DIR}/${folder}/`;
     const folderFiles = fs.readdirSync(folderPath);
     const pageFile = folderFiles.find(fileName => fileName.endsWith(`.${fileType}`));
-    return pageFile;});}
+    return pageFile
+    ;});}
+
 const PAGES = getFiles(PAGES_FOLDERS, 'pug');
 // console.log(PAGES);
 
@@ -103,11 +107,13 @@ module.exports = {
   //   inject: true
   // }),
 
-  ...PAGES.map(page => new HtmlWebpackPlugin({
-    template: `${PAGES_DIR}/${PAGES_FOLDERS}/${page}`,
+  ...PAGES.map((page, index) => new HtmlWebpackPlugin({
+    template: `${PAGES_DIR}/${PAGES_FOLDERS[index]}/${page}`,
     filename: `./${page.replace(/\.pug/,'.html')}`, 
     pretty: true,
-  }))
+  })),
+
+  // ...PAGES.map(page => console.log(page.replace(/\.pug/,'.html')))
 
   ],
 };

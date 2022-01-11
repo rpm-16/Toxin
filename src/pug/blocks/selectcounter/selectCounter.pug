@@ -1,0 +1,17 @@
+include ../input/input
+
+mixin selectCounter(options)
+    - 
+        var {label, type, inputClass, placeholder, items} = options
+        var item = 0
+
+    +input({label, type, inputClass, placeholder})
+    ul.selectCounter__item-list
+     for item, index in items
+          li.selectCounter__item
+            = item.title
+            .selectCounter__controls
+              button -
+              span 
+                = items[1].count
+              button +

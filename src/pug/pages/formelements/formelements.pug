@@ -1,0 +1,34 @@
+extends ../../layouts/uikit-layout/uikit-layout.pug
+include ../../blocks/input/input
+include ../../blocks/selectCounter/selectCounter
+
+
+
+block variables
+  -
+    let title = "Form & Elements";
+    var items = [
+      {title: "Взрослые", count: 0},
+      {title: "Дети", count: 0},
+      {title: "Младенцы", count: 0},
+    ];
+
+block content
+    .container
+        .col-3x 
+            +input({label: "Text Field",
+                     type: "default",
+                     inputClass: "form-group__input",
+                     placeholder: "Email"})
+            +input({label: "Text Field",
+                     type: "hover/focus", 
+                     inputClass: "form-group__input", 
+                     placeholder: "This is pretty awesome"})
+            +selectCounter({label: "Dropdown", 
+                            type: "",
+                            inputClass: "form-group__input selectCounter",
+                            placeholder: "Сколько гостей",
+                            items})
+
+        .col-3x
+        .col-3x
