@@ -1,34 +1,24 @@
 extends ../../layouts/uikit-layout/uikit-layout.pug
 include ../../blocks/input/input
-include ../../blocks/selectCounter/selectCounter
-
-
+include ../../blocks/input-dropdown/input-dropdown
+include ../../blocks/date-dropdown/date-dropdown
 
 block variables
   -
     let title = "Form & Elements";
-    var items = [
-      {title: "Взрослые", count: 0},
-      {title: "Дети", count: 0},
-      {title: "Младенцы", count: 0},
-    ];
+    let items = [{title: "Взрослые"}, {title: "Дети"}, {title:"младенцы"}];
 
 block content
-    .container
-        .col-3x 
-            +input({label: "Text Field",
-                     type: "default",
-                     inputClass: "form-group__input",
-                     placeholder: "Email"})
-            +input({label: "Text Field",
-                     type: "hover/focus", 
-                     inputClass: "form-group__input", 
-                     placeholder: "This is pretty awesome"})
-            +selectCounter({label: "Dropdown", 
-                            type: "",
-                            inputClass: "form-group__input selectCounter",
-                            placeholder: "Сколько гостей",
-                            items})
-
-        .col-3x
-        .col-3x
+  .container
+    .col-3x 
+      .mt-1
+        +input({label: "Text Field", note: "default", mclass: "", name: 'none', type: 'email', placeholder: "Email"})
+      .mt22
+        +input({label: "Text Field", note: "hover/focus", mclass: "", name: 'none', type: 'text', placeholder: "This is pretty awesome"})
+      .mt22
+        +input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown__input", name: '', type: 'text',
+                            placeholder: " ", items: "" , showButtons: false })
+      .mt22
+        +input({label: "Masked Text Field", note: "hover/focus", mclass: "", name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
+    .col-3x
+    .col-3x

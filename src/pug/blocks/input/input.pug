@@ -1,12 +1,13 @@
-mixin input(options = {})
-    - var {label, type, inputClass, placeholder } = options
+//- input field universal mixin, i hope. 
+
+mixin input(options)
+    - var {label, note, mclass, name, type, placeholder} = options
     
     .form-group
         label.form-group_wrapper
-            .label(class='form-group__title')
-                = label
-                .form-group__type
-                    = type
+            .form-group__title= label
+            if note
+            .form-group__note= note
 
         .input_wrapper
-            input(class= inputClass, placeholder= placeholder)          
+            input.form-group__input(class= mclass, placeholder= placeholder, name= name, type= type)          
