@@ -1,7 +1,7 @@
 //- input field universal mixin, i hope. 
 
 mixin input(options)
-    - var {label, note, mclass, name, type, placeholder} = options
+    - var {label, note, mclass, name, type, placeholder, id} = options
     
     .form-group
         label.form-group_wrapper
@@ -10,4 +10,4 @@ mixin input(options)
             .form-group__note= note
 
         .input_wrapper
-            input.form-group__input(class= mclass, placeholder= placeholder, name= name, type= type)          
+            input.form-group__input(class= mclass, placeholder= placeholder, name= name, type= type, id= id)          

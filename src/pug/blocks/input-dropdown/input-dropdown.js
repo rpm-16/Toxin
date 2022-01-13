@@ -1,16 +1,13 @@
-export showDropdown();
+block1.addEventListener("focus", showDropdown);
+// block1.addEventListener("blur", hideDropdown);
 
-alert('hi');
-// document.getElementByClassName('input-dropdown__input').background='red';
-function myFunction(obj) {
-    var dropdown= document.getElementById("dropdown");
-    dropdown.click(); 
-  }
+function showDropdown(){
+  dropdown.classList.add('expanded');
+  dropdown.style.display = 'block';
+  block1.classList.add('br');
+}
 
-  function showDropdown(e) {
-    if (!$(e.currentTarget).hasClass('select-counter--expanded')) {
-      $(e.currentTarget).addClass('select-counter--expanded');
-      $(document).on('click', hideDropdown);
-      addChangeEvents($(e.currentTarget))
-    }
-  }
+function hideDropdown(){
+  dropdown.classList.remove('expanded');
+  dropdown.style.display = 'none';
+}

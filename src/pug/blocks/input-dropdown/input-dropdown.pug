@@ -2,18 +2,16 @@ include ../input/input
 
 mixin input-dropdown(options)
     - 
-      var {label, note, mClass,name, type, placeholder, items, showButtons} = options;
+      var {label, note, mClass,name, type, placeholder, items, showButtons, id} = options;
     
       
-    +input(options)(value= countString || "Сколько гостей")
-    ul.input-dropdown_item-list   Выпадалка
-     for item in items
-          li.input-dropdown__item
+    +input(options)(value= countString || "Сколько гостей", id= id)
+    #dropdown
+      ul.input-dropdown_item-list
+        for item in items
+          li.input-dropdown__item= item.title
             .input-dropdown_controls
-              button -
-              button +
-     if showButtons
-        .input-dropdown_items-footer
-                   
-          li.input-dropdown_buttons
-            .need Buttons
+               button -
+               span 0
+               button +
+           
