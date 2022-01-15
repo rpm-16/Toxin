@@ -1,13 +1,14 @@
 block1.addEventListener("focus", showDropdown);
-// block1.addEventListener("blur", hideDropdown);
 
-function showDropdown(){
-  dropdown.classList.add('expanded');
+function showDropdown() {
   dropdown.style.display = 'block';
   block1.classList.add('br');
-}
+  }
 
-function hideDropdown(){
-  dropdown.classList.remove('expanded');
-  dropdown.style.display = 'none';
+
+function handleChangeCount(e) {
+    const liElement = $(e.currentTarget).closest('.input-dropdown__item');
+    const liIndex = liElement.attr('data-index');
+    const countType = $(e.currentTarget).attr('data-action'); // asc | desc
+    items[liIndex].count = countType === 'asc' ? items[liIndex].count + 1 : items[liIndex].count - 1;
 }

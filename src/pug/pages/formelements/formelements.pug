@@ -6,19 +6,19 @@ include ../../blocks/date-dropdown/date-dropdown
 block variables
   -
     let title = "Form & Elements";
-    let items = [{title: "Взрослые"}, {title: "Дети"}, {title:"младенцы"}];
+    let items = [{title: "Взрослые", count: 0}, {title: "Дети", count: 5}, {title:"младенцы", count: 10}];
 
 block content
   .container
     .col-3x 
-      .mt-1
-        +input({label: "Text Field", note: "default", mclass: "", name: 'none', type: 'email', placeholder: "Email"})
-      .mt22
-        +input({label: "Text Field", note: "hover/focus", mclass: "", name: 'none', type: 'text', placeholder: "This is pretty awesome"})
+      //- .mt-1
+      //-   +input({label: "Text Field", note: "default", mclass: "", name: 'none', type: 'email', placeholder: "Email"})
+      //- .mt22
+      //-   +input({label: "Text Field", note: "hover/focus", mclass: "", name: 'none', type: 'text', placeholder: "This is pretty awesome"})
       .mt22
         +input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown__input", name: '', type: 'text',
                             placeholder: " ", items: items , showButtons: false, id:"block1" })
-      .mt22
-        +input({label: "Masked Text Field", note: "hover/focus", mclass: "", name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
+      //- .mt22
+      //-   +input({label: "Masked Text Field", note: "hover/focus", mclass: "", name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
     .col-3x
     .col-3x

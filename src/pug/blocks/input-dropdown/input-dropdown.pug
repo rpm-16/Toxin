@@ -1,5 +1,6 @@
 include ../input/input
 
+
 mixin input-dropdown(options)
     - 
       var {label, note, mClass,name, type, placeholder, items, showButtons, id} = options;
@@ -11,7 +12,12 @@ mixin input-dropdown(options)
         for item in items
           li.input-dropdown__item= item.title
             .input-dropdown_controls
-               button -
-               span 0
-               button +
+               button(onclick = "plusCount()") -
+               span= item.count
+                .c {'$data-index'}
+               button(type="button" data-action="desc" disabled= item.count === 0) +
+      .buttons 
+      button(onClick="clearCount()") clear
+      button(onclick="submitCount()") submit
+
            
