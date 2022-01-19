@@ -1,34 +1,44 @@
 .input-dropdown {
 
-   &__input{
+   &__input {
       background-image: url(../img/expand_more.png);
       background-repeat: no-repeat;
-      background-position: 95%; }
+      background-position: 95%; 
+   }
 
-   &_item-list{
-      position: inherit;
+   &-options{
+      position: absolute;
       border: 1px solid rgba(31, 32, 65, 0.5);
       border-top: none;
       border-radius: 0 0 4px 4px ;
       list-style: none;
-      width: 100% ;
+      width: 320px;
       padding-left: 0px;
       background: #FFF;
       z-index: 1000;
       margin-top: 0px;
-      box-sizing: border-box;}
+      box-sizing: border-box;
+      display: none;
 
-   &__item{
-      display: flex;
-      justify-content: space-between;
-      height: 28px;
-      padding: 4px 9px 6px 14px;
-      font-size: 12px;
-      font-weight: bold;
-      align-items: center;
-      text-transform: uppercase;} 
 
-      &_controls{
+      &__list {
+         padding: 0;
+         margin: 0;
+      }
+      
+      &__item{
+         display: flex;
+         justify-content: space-between;
+         height: 28px;
+         padding: 4px 9px 6px 14px;
+         font-size: 12px;
+         font-weight: bold;
+         align-items: center;
+         text-transform: uppercase;
+      } 
+
+      &_controls {
+
          button{
             height: 30px;
             width: 30px;
@@ -39,17 +49,15 @@
          }
       }
    }
- 
+}
    
 
-
-#dropdown{
+.dropdown{
    width: 100%;
    box-sizing: border-box;
-   display: block;
+   display: none;
    z-index: 10000;
    background: #FFF;}
-
 
 .expanded{
    display: block;
@@ -57,7 +65,8 @@
    background: #FFF;}
 
 .br {
-   border-radius: 4px 4px 0px 0px;}
+   border-radius: 4px 4px 0px 0px; 
+}
 
 
 

@@ -1,2 +1,8 @@
 mixin date-dropdown(option)
-    .date-dropdown выбор даты
+    -
+     var inputsArr = [{label: startLabel, value: startDate}, {label: endLabel, value: endDate}]
+    
+    .date-dropdown 
+        input.date('type'='date', 'name' = 'startDate')
+        input.date('type'='date', 'name' = 'endtDate')
+  
