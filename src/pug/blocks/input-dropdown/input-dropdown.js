@@ -2,11 +2,6 @@ const buttons = document.getElementsByTagName('button');
 [...buttons].forEach((button) => addEventListener('click', handler));
 block1.addEventListener('focus', showDropdown);
 
-
-// block1.addEventListener('blur', hideDropdown);
-
-
-
 function showDropdown() {
   obj = document.getElementsByClassName('input-dropdown-options');
   obj[0].classList.add('expanded');
@@ -16,8 +11,6 @@ function hideDropdown() {
   obj = document.getElementsByClassName('input-dropdown-options');
   obj[0].classList.remove('expanded');
 }
-
-
 
 function handler() {
   action = event.target.getAttribute('data-action')
@@ -43,13 +36,22 @@ function handler() {
       }
     break;
     case 'submit':
+      block1.value = '';
       let arr_list = document.getElementsByClassName('input-dropdown-options__item');
+      let numberGuests = 0;
       for (let item of arr_list) {
-        item = item.innerText.replace( '+', '');
-        item = item.replace( '-', ':');
-        const reg = /\n+/g;
-        console.log(item.replace(reg, ''));
-      }     
+        const reg = [0-9]; /* подсчитать количество и сколнить слово */
+        numberGuests += Number(item.innerText.replace(reg, ''));
+      }
+      alert(numberGuests);
+        block1.value = str(numberGuests) + " гостя";    
+      // for (let item of arr_list) {
+      //   item = item.innerText.replace( '+', '');
+      //   item = item.replace( '-', ':');
+      //   const reg = /\n+/g;
+      //   block1.value += item.replace(reg, '');        
+      // }     
+      hideDropdown();
     break;
   }
 }

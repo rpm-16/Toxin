@@ -2,6 +2,8 @@ extends ../../layouts/uikit-layout/uikit-layout.pug
 include ../../blocks/input/input
 include ../../blocks/input-dropdown/input-dropdown
 include ../../blocks/date-dropdown/date-dropdown
+include ../../blocks/checkbox/checkbox
+include ../../blocks/radiobuttons/radiobuttons
 
 block variables
   -
@@ -14,13 +16,22 @@ block content
       .mt-1
         +input({label: "Text Field", note: "default", mclass: "", name: 'none', type: 'email', placeholder: "Email"})
       .mt22
-        +input({label: "Text Field", note: "hover/focus", mclass: "", name: 'none', type: 'text', placeholder: "This is pretty awesome"})
+        +input({label: "Text Field", note: "hover / focus", mclass: "", name: 'none', type: 'text', placeholder: "This is pretty awesome"})
       .mt22
         +input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown__input", name: '', type: 'text',
-                            placeholder: " ", items: items , showButtons: false, id:"block1" })
+                            placeholder: "Сколько гостей ", items: items , showButtons: false, id:"block1" })
       .mt22
-        +input({label: "Masked Text Field", note: "hover/focus", mclass: "", name: '', type: 'date', placeholder: "ДД.ММ.ГГГГ"})
-      .mt22
-        +date-dropdown()
+        +input({label: "Masked Text Field", note: "", mclass: "", name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
+      .mt40
+        +date-dropdown([{label:'date dropdown'}, {label:'date dropdown'}])
+      .mt40
+        +date-dropdown([{label:"filter date dropdown"}])
+      .mt40
+        +input({label: "Subscription Text field"})
     .col-3x
+      .mt-1
+        +checkbox({groupHeader: "checkbox buttons" }, [{label: "Можно курить", checked: true }, {label: "Можно с питомцами", checked: true}, {label: "Можно пригласить гостей (до 10 человек)"} ])
+      .mt-20
+        +radiobuttons({groupHeader: "radio buttons" }, [{label: "Мужчина", checked: true }, {label: "женщина"} ])
+
     .col-3x

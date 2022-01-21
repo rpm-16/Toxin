@@ -1,8 +1,12 @@
-mixin date-dropdown(option)
-    -
-     var inputsArr = [{label: startLabel, value: startDate}, {label: endLabel, value: endDate}]
-    
-    .date-dropdown 
-        input.date('type'='date', 'name' = 'startDate')
-        input.date('type'='date', 'name' = 'endtDate')
-  
+mixin date-dropdown(options)
+    - let arr = options
+
+    .date-dropdown
+        for item in arr
+            .date-dropdown-item
+                label.data-dropdown-wrapper
+                    .date-dropdown__label= item.label
+                    .date-dropdown-input-wrapper
+                        input.date-dropdown__input.date('type'='date')
+                .date-dropdown__datepicker                    
+

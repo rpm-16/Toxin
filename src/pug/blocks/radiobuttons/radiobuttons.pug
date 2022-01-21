@@ -1,0 +1,13 @@
+mixin radiobuttons(heading, args)
+    - let head = heading;
+    - let arg = args;
+
+    .form-group
+        .form-group-wrapper
+            .form-group__title
+                label= head.groupHeader
+            .form-group__note
+                .wrapper
+                    for text in arg
+                        .form-group__input= text.label
+                            input(type="checkbox")(checked= text.checked)
