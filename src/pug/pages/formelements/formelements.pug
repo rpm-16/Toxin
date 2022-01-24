@@ -4,6 +4,8 @@ include ../../blocks/input-dropdown/input-dropdown
 include ../../blocks/date-dropdown/date-dropdown
 include ../../blocks/checkbox/checkbox
 include ../../blocks/radiobuttons/radiobuttons
+include ../../blocks/toggle-buttons/toggle-buttons
+include ../../blocks/like-buttons/like-buttons
 
 block variables
   -
@@ -30,8 +32,12 @@ block content
         +input({label: "Subscription Text field"})
     .col-3x
       .mt-1
-        +checkbox({groupHeader: "checkbox buttons" }, [{label: "Можно курить", checked: true }, {label: "Можно с питомцами", checked: true}, {label: "Можно пригласить гостей (до 10 человек)"} ])
-      .mt-20
-        +radiobuttons({groupHeader: "radio buttons" }, [{label: "Мужчина", checked: true }, {label: "женщина"} ])
+        +checkbox({groupHeader: "checkbox buttons", note: "", type: "checkbox" }, [{label: "Можно курить", checked: true }, {label: "Можно с питомцами", checked: true}, {label: "Можно пригласить гостей (до 10 человек)"} ])
+      .mt40
+        +radiobuttons({groupHeader: "radio buttons", note: "", type: "radio" }, [{label: "Мужчина", checked: true }, {label: "женщина"} ])
+      .mt30
+        +togglebuttons({groupHeader: "toggle", note: "", type: "radio" }, [{label: "Получать спецпредложенния", checked: true }, {label: "Получать спецпредложенния"} ])
+      .mt40
+        +like-buttons({groupHeader: "like button", note: "", type: "button" }, [{label: "", count: 2, class: "" }, {label: "", count: 12, class: "active"} ])
 
     .col-3x

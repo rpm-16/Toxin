@@ -1,0 +1,17 @@
+mixin togglebuttons(heading, args)
+    - let head = heading;
+    - let arg = args;
+
+    .form-group
+        label.form-group_wrapper
+            .form-group__title= head.groupHeader
+            if head.note
+            .form-group__note= head.note
+
+        .toggle-group
+            ul.toggle-group__list
+                for t in arg
+                    li.toggle-group__item
+                        input.toggle-group__input(type= head.type)(checked= t.checked)
+                        label.toggle-group__label= t.label                
+                    

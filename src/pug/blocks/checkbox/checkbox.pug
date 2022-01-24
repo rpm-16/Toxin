@@ -3,12 +3,15 @@ mixin checkbox(heading, args)
     - let arg = args;
 
     .form-group
-        .form-group-wrapper
-            .form-group__title
-                label= head.groupHeader
-            .form-group__note
-                .wrapper
-                    for text in arg
-                        .form-group__input= text.label
-                            input(type="checkbox")(checked= text.checked)
+        label.form-group_wrapper
+            .form-group__title= head.groupHeader
+            if head.note
+            .form-group__note= head.note
+
+        .checkbox-group
+            ul.checkbox-group__list
+                for t in arg
+                    li.checkbox__list__item
+                        input(type= head.type)(checked= t.checked)
+                        .checkbox__list__label= t.label
                     

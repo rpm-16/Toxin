@@ -3,11 +3,15 @@ mixin radiobuttons(heading, args)
     - let arg = args;
 
     .form-group
-        .form-group-wrapper
-            .form-group__title
-                label= head.groupHeader
-            .form-group__note
-                .wrapper
-                    for text in arg
-                        .form-group__input= text.label
-                            input(type="checkbox")(checked= text.checked)
+        label.form-group_wrapper
+            .form-group__title= head.groupHeader
+            if head.note
+            .form-group__note= head.note
+
+        .radiobuttons-group
+            ul.radiobuttons-group__list
+                for t in arg
+                    li.radiobuttons__list__item
+                        input(type= head.type)(checked= t.checked)
+                        .radiobuttons__list__label= t.label
+                    
