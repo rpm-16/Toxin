@@ -13,18 +13,33 @@
     padding: 0;
     margin: 0;
     margin-top: 15px;
+    width: 100%;
 }
+
+.checkbox__list__label {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.5);
+    margin-left: 10px;
+}
+
 .checkbox__list__item{
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    margin-bottom: 12px;
+    margin-bottom: 11px;
 
     input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
         width: 20px;
-        height:20px;
+        height: 20px;
         list-style: none;
         padding: 0;
         margin: 0;
@@ -34,16 +49,15 @@
         border-radius: 4px;
         }
 
+    input:checked {
+        background: url('../img/Vector.png') no-repeat;
+        background-position: 4px 4px;
+        border: 1px solid #BC9CFF;
+        box-sizing: border-box;
+        border-radius: 4px;
+        width: 20px;
+        height:20px;
+            }
+
 }
 
-.checkbox__list__label {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
-    /* identical to box height, or 129% */
-    /* Dark 50% */
-    color: rgba(31, 32, 65, 0.5);
-    margin-left: 10px;
-}

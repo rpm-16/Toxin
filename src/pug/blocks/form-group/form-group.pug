@@ -1,0 +1,9 @@
+mixin form-group(heading)
+
+    - let head = heading;
+    
+    .form-group
+        label.form-group_wrapper
+            .form-group__title= head.groupHeader
+            if head.note
+            .form-group__note= head.note

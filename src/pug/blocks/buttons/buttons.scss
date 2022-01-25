@@ -1,4 +1,50 @@
+.withbg { 
+    cursor: pointer;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 22px;
+    width: 100px;
+    border: none;
+    /* identical to box height */
+    text-transform: uppercase;
+    height: 44px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #FFF;
+    &:hover {
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        opacity: 0.5;
+    }
+}
+
+.withborder { 
+    cursor: pointer;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 22px;
+    width: 100px;
+    /* identical to box height */
+    text-transform: uppercase;
+    height: 44px;
+    background: #FFF;
+    color: #BC9CFF;
+    border: 2px solid;
+    border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border-radius: 22px;
+    outline: none;
+    &:hover {
+        opacity: 0.5;
+        color: #BC9CFF;
+    }
+}
+
 .withoutbg { 
+    cursor: pointer;
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
@@ -9,8 +55,32 @@
     height: 44px;
     border: none;
     color: #BC9CFF;
-
-    :hover {
+     
+    &:hover {
         color: rgba(31, 32, 65, 0.5);
+    }
+}
+
+// кнопка с иконкой и фоном
+.withbordericon { 
+    cursor: pointer;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 22px;
+    width: 100%;
+    border: none;
+    /* identical to box height */
+    text-transform: uppercase;
+    height: 44px;
+    background: #FFF;
+    color: #BC9CFF;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #FFF;
+    &:hover {
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        opacity: 0.5;
     }
 }

@@ -1,0 +1,18 @@
+mixin rate-button(heading, args)
+
+    - let head = heading;
+    - let arg = args;
+
+    .form-group
+        label.form-group_wrapper
+            .form-group__title= head.groupHeader
+            if head.note
+            .form-group__note= head.note
+
+        .rate-button-wrapper
+            for item in arg
+                - let n = 1;
+                button.rate-button__button
+                   - for (let i = 0; i < 5; i++ )
+                     - let ico = i < item.rate ? "rate": " ";
+                        span.rate-button__icon(class= ico)

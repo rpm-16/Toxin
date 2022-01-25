@@ -12,6 +12,6 @@ mixin radiobuttons(heading, args)
             ul.radiobuttons-group__list
                 for t in arg
                     li.radiobuttons__list__item
-                        input(type= head.type)(checked= t.checked)
+                        input(type= head.type)(name= head.name)(checked= t.checked)
                         .radiobuttons__list__label= t.label
                     

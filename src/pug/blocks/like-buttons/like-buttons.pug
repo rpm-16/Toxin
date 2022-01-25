@@ -12,7 +12,4 @@ mixin like-buttons(heading, args)
         .like-button-wrapper
             for t in arg
                 button(class= t.class).like-button__button(type= head.type)
-                    span.like-button_label= t.label
-                        i.icons= like
-                        span= t.count
-                    
+                    span= t.count          

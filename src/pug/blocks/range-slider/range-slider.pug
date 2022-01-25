@@ -1,0 +1,16 @@
+mixin range-slider(heading)
+    - let head = heading;
+    
+
+    .form-group
+        label.form-group_wrapper
+            .form-group__title= head.groupHeader
+            if head.note
+            .form-group__note= head.note
+            
+        .range-slider 
+            label.range-slider__label
+              p.range-slider__heading
+                span.range-slider__tagline= slider__label
+                span.range-slider__caption!= slider__label
+            input.range-slider__input()

@@ -6,6 +6,10 @@ include ../../blocks/checkbox/checkbox
 include ../../blocks/radiobuttons/radiobuttons
 include ../../blocks/toggle-buttons/toggle-buttons
 include ../../blocks/like-buttons/like-buttons
+include ../../blocks/rate-button/rate-button
+include ../../blocks/range-slider/range-slider
+include ../../blocks/form-group/form-group
+include ../../blocks/buttons/buttons
 
 block variables
   -
@@ -15,7 +19,7 @@ block variables
 block content
   .container
     .col-3x 
-      .mt-1
+      .mt0
         +input({label: "Text Field", note: "default", mclass: "", name: 'none', type: 'email', placeholder: "Email"})
       .mt22
         +input({label: "Text Field", note: "hover / focus", mclass: "", name: 'none', type: 'text', placeholder: "This is pretty awesome"})
@@ -34,10 +38,29 @@ block content
       .mt-1
         +checkbox({groupHeader: "checkbox buttons", note: "", type: "checkbox" }, [{label: "Можно курить", checked: true }, {label: "Можно с питомцами", checked: true}, {label: "Можно пригласить гостей (до 10 человек)"} ])
       .mt40
-        +radiobuttons({groupHeader: "radio buttons", note: "", type: "radio" }, [{label: "Мужчина", checked: true }, {label: "женщина"} ])
+        +radiobuttons({groupHeader: "radio buttons", note: "", type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }, {label: "Женщина"} ])
       .mt30
-        +togglebuttons({groupHeader: "toggle", note: "", type: "radio" }, [{label: "Получать спецпредложенния", checked: true }, {label: "Получать спецпредложенния"} ])
-      .mt40
+        +togglebuttons({groupHeader: "toggle", note: "", type: "checkbox" }, [{label: "Получать спецпредложения", checked: true }, {label: "Получать спецпредложения"} ])
+      .mt42
         +like-buttons({groupHeader: "like button", note: "", type: "button" }, [{label: "", count: 2, class: "" }, {label: "", count: 12, class: "active"} ])
-
+      .mt40
+        +rate-button({groupHeader: "rate button", note: ""}, [{rate: 4},{rate: 5}])
     .col-3x
+      .mt-1
+        +range-slider({groupHeader: "range slider", unitOfMeasurement: "Р", from: 5000, to: 10000, max: 20000})
+      .mt35
+        +form-group({groupHeader: "buttons", note: ""})
+        .mt16
+          +button({name: "CLICK ME"}).withbg
+          +button({name: "CLICK ME"}).withbg
+        .mt30
+          +button({name: "CLICK ME"}).withborder
+          +button({name: "CLICK ME"}).withborder
+        .mt16
+          +button({name: "CLICK ME"}).withoutbg
+          +button({name: "CLICK ME"}).withoutbg
+        .mt16
+          +button({name: "Перейти к оплате"}).withbordericon
+      .mt40
+        +form-group({groupHeader: "pagination", note: ""})
+        //- +pagination()

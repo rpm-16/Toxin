@@ -1,12 +1,15 @@
 .container {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .col-3x {
     flex: 1 0 auto; 
     flex-basis: 33%;
     max-width: 320px;
+    min-width: 320px;
+    margin-bottom: 50px;
 }
 
 .col-3x:nth-child(2) {
