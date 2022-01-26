@@ -10,6 +10,7 @@ include ../../blocks/rate-button/rate-button
 include ../../blocks/range-slider/range-slider
 include ../../blocks/form-group/form-group
 include ../../blocks/buttons/buttons
+include ../../blocks/pagination/pagination
 
 block variables
   -
@@ -47,8 +48,8 @@ block content
         +rate-button({groupHeader: "rate button", note: ""}, [{rate: 4},{rate: 5}])
     .col-3x
       .mt-1
-        +range-slider({groupHeader: "range slider", unitOfMeasurement: "Р", from: 5000, to: 10000, max: 20000})
-      .mt35
+        +range-slider({groupHeader: "range slider", note:"", unit: "₽", from: 5000, to: 10000, max: 15000, description: ""})
+      .mt40
         +form-group({groupHeader: "buttons", note: ""})
         .mt16
           +button({name: "CLICK ME"}).withbg
@@ -63,4 +64,5 @@ block content
           +button({name: "Перейти к оплате"}).withbordericon
       .mt40
         +form-group({groupHeader: "pagination", note: ""})
-        //- +pagination()
+        .mt16
+          +pagination({pagemax: 15, count: 180, countOnPage: 12, currentPage: 1, description: "1 - 12 из 100+ вариантов аренды"})
