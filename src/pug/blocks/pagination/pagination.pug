@@ -22,9 +22,16 @@ mixin pagination(args)
                 //- li.pagination-group__item
                 //-     a.pagination-group__link ...
 
+            if arr.currentPage !== arr.pagemax
+                li.pagination-group__item
+                    a.pagination-group__link ...
 
+            if arr.currentPage !== arr.pagemax
+                li.pagination-group__item
+                    a.pagination-group__link= arr.pagemax
+                        
 
-            if arr.currentPage !== 15
+            if arr.currentPage !== arr.pagemax
                 li.pagination-group__item.nextPage
                     a.pagination-group__link
                         i.arrowforward

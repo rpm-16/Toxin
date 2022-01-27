@@ -1,21 +1,20 @@
 include ../input/input
 include ../buttons/buttons
-mixin input-dropdown(options)
-    - 
-      var {label, note, mClass, name, type, placeholder, items, showButtons, id} = options;
-    
-    .input-dropdown
-      +input(options)(value= countString || "Сколько гостей", id= id, required, name= name, readonly= "readonly")
-      .input-dropdown-options
-        ul.input-dropdown-options__list
-          for item in items
-            li.input-dropdown-options__item= item.title
-              .input-dropdown-options_controls
-                button(type="button" data-action="delGuest" disabled= item.count === 0) -
-                span.input-dropdown-options__itemcount= item.count         
-                button(type="button" data-action="addGuest" disabled= item.count > 7) +
-        .buttons 
-         +button({name: "Очистить"})(data-action="clear").withoutbg
-         +button({name: "Применить"})(data-action="submit").withoutbg
+mixin input-dropdown(args)
+  - let objArgs = args;
+  
+  .input-dropdown-group
+    +input(args)(value= countString || objArgs.placeholder, readonly= "readonly")
+    .input-dropdown-group__options
+      ul.input-dropdown-group__options__list
+      for item in objArgs.items
+        li.input-dropdown-group__options__item= item.title
+          .input-dropdown-group__options__controls
+            button(type="button" data-action="delGuest" disabled= item.count === 0) -
+            span.input-dropdown-group__options__itemcount= item.count         
+            button(type="button" data-action="addGuest" disabled= item.count > 7) +
+      .buttons 
+        +button({name: "Очистить"})(data-action="clear").withoutbg
+        +button({name: "Применить"})(data-action="submit").withoutbg
 
            

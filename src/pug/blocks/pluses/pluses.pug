@@ -1,0 +1,9 @@
+mixin pluses(args)
+ - let arr = args 
+
+ .pluses-group 
+    for plus in args
+        .pluses-group__item 
+            .pluses-group__icon= plus.icon
+            .pluses-group__title= plus.title
+                .pluses-group__text= plus.text

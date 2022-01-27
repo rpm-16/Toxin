@@ -1,0 +1,35 @@
+.input-group__input {
+      font-family: Montserrat;
+      height: 44px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 4px;
+      padding: 15px 13px;
+      box-sizing: border-box;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: normal;
+      width: 100%;
+      color: rgba(31, 32, 65, 0.25);
+
+      &::placeholder {
+         color: rgba(31, 32, 65, 0.25)
+      }
+ 
+      &:focus, &:hover {
+         color: rgba(31, 32, 65, 0.5);
+         border: 1px solid rgba(31, 32, 65, 0.5);
+
+            &::placeholder {
+               color: rgba(31, 32, 65, 0.5);
+            }
+      }
+}
+
+// технический стиль ненужен в продакшене
+.input-group__input__hover {
+   color: rgba(31, 32, 65, 0.5);
+   border: 1px solid rgba(31, 32, 65, 0.5);
+   &::placeholder {
+      color: rgba(31, 32, 65, 0.5);
+   }
+}

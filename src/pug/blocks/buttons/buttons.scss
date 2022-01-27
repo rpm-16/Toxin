@@ -34,8 +34,8 @@
     height: 44px;
     background: #FFF;
     color: #BC9CFF;
-    border: 2px solid;
-    border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    border: 2px solid linear-gradient(180deg, #BC9CFF, #8BA4F9);
+    // border-image-source: linear-gradient(180deg, #BC9CFF, #8BA4F9);
     border-radius: 22px;
     outline: none;
     margin-right: 15px;
@@ -58,6 +58,7 @@
     border: none;
     color: #BC9CFF;
     margin-right: 15px;
+    padding: 0px;
     &:hover {
         color: rgba(31, 32, 65, 0.5);
     }
@@ -85,4 +86,60 @@
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         opacity: 0.5;
     }
+}
+
+//технические скрипты
+.withbg__hover { 
+    cursor: pointer;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 22px;
+    width: 100px;
+    border: none;
+    /* identical to box height */
+    text-transform: uppercase;
+    height: 44px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    opacity: 0.5;
+    color: #FFF;
+    margin-right: 15px;
+}
+
+.withborder__hover { 
+    cursor: pointer;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    border-radius: 22px;
+    width: 100px;
+    /* identical to box height */
+    text-transform: uppercase;
+    height: 44px;
+    background: #FFF;
+    color: #BC9CFF;
+    border: 2px solid linear-gradient(180deg, #BC9CFF, #8BA4F9);
+    opacity: 0.5;
+    border-radius: 22px;
+    outline: none;
+    margin-right: 15px;
+}
+
+.withoutbg__hover { 
+    cursor: pointer;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    height: 44px;
+    border: none;
+    color: rgba(31, 32, 65, 0.5);
+    margin-right: 15px;
+    padding: 0px;
 }

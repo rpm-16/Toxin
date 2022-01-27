@@ -1,9 +1,10 @@
-mixin form-group(heading)
-
-    - let head = heading;
+mixin form-group(args)
+  - let objArgs = args
     
     .form-group
-        label.form-group_wrapper
-            .form-group__title= head.groupHeader
-            if head.note
-            .form-group__note= head.note
+      label.form-group__wrapper
+        .form-group__title= objArgs.title
+        if objArgs.note
+          .form-group__note= objArgs.note
+        
+    block

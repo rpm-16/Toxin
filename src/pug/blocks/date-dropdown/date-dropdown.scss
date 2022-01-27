@@ -1,17 +1,20 @@
 .date-dropdown {
     display: flex;
     flex-direction: row;
+    flex-direction: flex-start;
     justify-content: space-between;
     width: 100%;
 
     &-item {
         flex-grow: 1;
-        margin-right: 20px;
-
-      
+        margin-right: 18px;
       }
 
     &__input {
+        background-image: url(../img/expand_more.png);
+        background-repeat: no-repeat;
+        background-position: bottom 50% right 15px; 
+
         font-family: Montserrat;
         height: 44px;
         border: 1px solid rgba(31, 32, 65, 0.25);

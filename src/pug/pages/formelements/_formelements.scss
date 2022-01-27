@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -9,10 +9,16 @@
     flex-basis: 33%;
     max-width: 320px;
     min-width: 320px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
-.col-3x:nth-child(2) {
-    margin-left: 53px;
+.col-3x-2x {
+    flex: 1 0 auto; 
+    flex-basis: 66%;
+    max-width: 640px;
+    min-width: 320px;
+    margin-bottom: 100px;
 }
+
+
 
