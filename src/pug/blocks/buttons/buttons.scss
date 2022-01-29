@@ -13,7 +13,6 @@
     height: 44px;
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     color: #FFF;
-    margin-right: 15px;
     &:hover {
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         opacity: 0.5;
@@ -38,7 +37,6 @@
     // border-image-source: linear-gradient(180deg, #BC9CFF, #8BA4F9);
     border-radius: 22px;
     outline: none;
-    margin-right: 15px;
     &:hover {
         opacity: 0.5;
         color: #BC9CFF;
@@ -57,7 +55,6 @@
     height: 44px;
     border: none;
     color: #BC9CFF;
-    margin-right: 15px;
     padding: 0px;
     &:hover {
         color: rgba(31, 32, 65, 0.5);
@@ -105,7 +102,6 @@
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     opacity: 0.5;
     color: #FFF;
-    margin-right: 15px;
 }
 
 .withborder__hover { 
@@ -126,7 +122,6 @@
     opacity: 0.5;
     border-radius: 22px;
     outline: none;
-    margin-right: 15px;
 }
 
 .withoutbg__hover { 
@@ -140,6 +135,5 @@
     height: 44px;
     border: none;
     color: rgba(31, 32, 65, 0.5);
-    margin-right: 15px;
     padding: 0px;
 }

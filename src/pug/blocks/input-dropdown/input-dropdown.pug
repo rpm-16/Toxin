@@ -2,10 +2,11 @@ include ../input/input
 include ../buttons/buttons
 mixin input-dropdown(args)
   - let objArgs = args;
-  
+   
+ 
   .input-dropdown-group
     +input(args)(value= countString || objArgs.placeholder, readonly= "readonly")
-    .input-dropdown-group__options
+    .input-dropdown-group__options(class=objArgs.inline? "expanded": "")
       ul.input-dropdown-group__options__list
       for item in objArgs.items
         li.input-dropdown-group__options__item= item.title
@@ -13,8 +14,9 @@ mixin input-dropdown(args)
             button(type="button" data-action="delGuest" disabled= item.count === 0) -
             span.input-dropdown-group__options__itemcount= item.count         
             button(type="button" data-action="addGuest" disabled= item.count > 7) +
-      .buttons 
-        +button({name: "Очистить"})(data-action="clear").withoutbg
-        +button({name: "Применить"})(data-action="submit").withoutbg
+      if objArgs.buttons        
+        .buttons 
+          +button({name: "Очистить"})(data-action="clear").withoutbg
+          +button({name: "Применить"})(data-action="submit").withoutbg
 
            

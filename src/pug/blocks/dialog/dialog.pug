@@ -1,0 +1,8 @@
+mixin dialog(args) 
+  - let objArgs = args 
+
+  section.dialog
+    .dialog__header
+        h2.dialog__title= objArgs.title
+    .dialog__content
+        block

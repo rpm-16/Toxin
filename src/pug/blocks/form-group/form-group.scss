@@ -23,4 +23,30 @@
     font-weight: normal;
     float: right;
     color: rgba(31, 32, 65, 0.5);
+
+}
+
+// .form-group__expand {
+//     background-image: url(../img/expand_more.png);
+//     background-repeat: no-repeat;
+//     background-position: top;
+//     height: 44px;
+//     width: 44px;
+// }
+
+.accordion {
+    label {
+        cursor: pointer;
+        background-image: url(../img/expand_more.png);
+        background-repeat: no-repeat;
+        background-position: top right;
+}
+
+    .form-group__body {
+        display: none;
+    }
+
+    .expanded {
+        display: block;
+    }
 }

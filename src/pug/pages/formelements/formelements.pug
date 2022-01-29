@@ -14,6 +14,7 @@ include ../../blocks/range-slider/range-slider
 include ../../blocks/pagination/pagination
 include ../../blocks/bullet-list/bullet-list
 include ../../blocks/pluses/pluses
+include ../../blocks/comment/comment
 
 block variables
   -
@@ -92,48 +93,56 @@ block content
       .w266
         +form-group({title: "Dropdown", note: "default"})
           .mt5
-            +input-dropdown({mclass: "input-dropdown-group__input", name: '', type: 'text',
+            +input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown2', type: 'text',
                            placeholder: "2 спальни, 2 кровати", items: items1 , showButtons: false, id:"block2" })
       .mt20
         .w266
-          +form-group({title: "Dropdown1", note: "expanded"})
+          +form-group({title: "Dropdown", note: "expanded"})
             .mt5
-              +input-dropdown({mclass: "input-dropdown-group__input", name: '', type: 'text',
-                            placeholder: "2 спальни, 2 кровати", items: items1 , showButtons: false, id:"block3" })
+              +input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown3', type: 'text',
+                            placeholder: "2 спальни, 2 кровати", items: items1, inline: true, id:"block3" })
     .col-3x.mr74
         +form-group({title: "Dropdown", note: ""})
           .mt5
-            +input-dropdown({mclass: "expanded", name: '', type: 'text',
-                             placeholder: "Сколько гостей ", items: items , showButtons: false, id:"block4" })
+            +input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown4', type: 'text',
+                             placeholder: "Сколько гостей ", items: items, inline: true, id:"block4", buttons: true  })
     .col-3x
         +form-group({title: "Dropdown", note: ""})
           .mt5
-            +input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown__input expanded", name: '', type: 'text',
-                            placeholder: "Сколько гостей ", items: items , showButtons: false, id:"block5" })
+            +input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown-group__input", 
+            name: 'dropdown5', type: 'text',
+            placeholder: "Сколько гостей ", items: items , inline: true, id:"block5", buttons: true })
 
 
-    .col-3x.mr126
-      .mt22
-        +form-group({title: "expandable checkbox list", note: ""})
-          +checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},
-          {label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
-      .mt22
-        +form-group({title: "expandable checkbox list", note: ""})
-          +checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},
-          {label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
-
-    .col-3x.mr74
+    .col-3x.mr126.mt-40
+      .w266
         .mt-1
-          +form-group({title: "rich checkbox buttonst", note: ""})
+       
+          +form-group({title: "expandable checkbox list", note: "", accordion: true})
+            +checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},
+            {label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
+        .mt48
+          +form-group({title: "expandable checkbox list", note: "", accordion: true, inline: true})
+            +checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},
+            {label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
+
+    .col-3x.mr74.mt-40
+      .w260
+        .mt-1
+          +form-group({title: "rich checkbox buttons", note: ""})
             +checkbox({type: "checkbox" }, [{label: "Широкий корридор", checked: false, note: "Ширина коридоров в номере не менее 91 см." }, {label: "Помошник для инвалидов", checked: false, note: "На 1 этаже вас встретит специалист  и проводит до номера."}])
-    .col-3x
+    .col-3x.mt-40
+      .w260
         .mt-1
           +form-group({title: "bullet list", note: ""}) 
             +bullet-list([{rule: "Нельзя с питомцами"}, {rule: "Без вечеринок и мероприятий"}, {rule: "Время прибытия — после 13:00, а выезд до 12:00"}])
           
 
-    .col-3x.mr126
-      +pluses([{icon: "1", title:"Комфорт", text:"удобство"}, {icon: "2", title:"Удобство", text:"окно в каждой из спален"}])        
+    .col-3x.mr126.mt-10
+      +pluses([{icon: "./img/insert_emoticon.png", title:"Комфорт", text:"Шумопоглощающие стены"}, {icon: "./img/location_city.png", title:"Удобство", text:"окно в каждой из спален"}])        
 
     .col-3x-2x
-      .comment Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+      +comment({author: "Мурад Сарафанов",
+                timeAgo: "5 дней назад",
+                text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
+                )     

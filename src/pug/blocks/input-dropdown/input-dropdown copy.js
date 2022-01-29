@@ -1,20 +1,19 @@
-let dropdown_toggles = document.querySelectorAll('.input-dropdown-group__input');
+const buttons = document.getElementsByTagName('button');
+[...buttons].forEach((button) => addEventListener('click', handler));
+block1.addEventListener('focus', showDropdown);
 
-for (let i = 0; i < dropdown_toggles.length; i++) {
+function showDropdown() {
+  obj = document.getElementsByClassName('input-dropdown-group__options');
 
-    dropdown_toggles[i].addEventListener('focus', (e) => {
-        e.preventDefault(); 
-        event.target.parentElement.nextElementSibling.classList.toggle('expanded')}
-    );
+  // alert(event.target.getAttribute('id'));
+
+  obj[0].classList.add('expanded');
 }
 
-// const options = document.getElementsByClass('input-dropdown-group__options__controls');
-const buttons = document.getElementsByTagName('button');
-// // buttons.forEach( (button) => {button.style.background ='red'})   
-
-[...buttons].forEach((button) => addEventListener('click', handler));
-
-
+function hideDropdown() {
+  obj = document.getElementsByClassName('input-dropdown-group__options');
+  obj[0].classList.remove('expanded');
+}
 
 function handler() {
   action = event.target.getAttribute('data-action')
@@ -45,7 +44,6 @@ function handler() {
       for (let item of arr_list) {
         numberGuests += Number(item.innerText);          
         }
-      
       block1.value = numberGuests + " гостей";    
       hideDropdown();
     break;
