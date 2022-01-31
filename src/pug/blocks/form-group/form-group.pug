@@ -6,6 +6,6 @@ mixin form-group(args)
         .form-group__title= objArgs.title
         if objArgs.note
           .form-group__note= objArgs.note
-
+      
       .form-group__body(class=objArgs.inline? "expanded": "")
         block

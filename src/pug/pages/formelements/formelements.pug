@@ -34,7 +34,7 @@ block content
       .mt20
         +form-group({title: "Dropdown", note: ""})
           +input-dropdown({mclass: "input-dropdown-group__input mt5", name: 'dropdown1', type: 'text', placeholder: "Сколько гостей ",
-          items: items, showButtons: false, id: "block1" })
+            items: items, showButtons: false, id: "block1" })
       .mt22
         +form-group({title: "Masked Text Field", note: ""})
           +input({mclass: "mt5", name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
@@ -60,7 +60,8 @@ block content
           +radiobuttons({ type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }, {label: "Женщина"} ])
       .mt30
         +form-group({title: "toggle", note: ""})
-          +togglebuttons({type: "checkbox" }, [{label: "Получать спецпредложения", checked: true }, {label: "Получать спецпредложения"} ])
+          +toggle({label: "Получать спецпредложения", checked: false })
+          +toggle({label: "Получать спецпредложения", checked: true })
       .mt42
         +form-group({title: "like button", note: ""})
           +like-buttons({type: "button" }, [{label: "", count: 2, class: "" }, {label: "", count: 12, class: "active"} ])

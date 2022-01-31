@@ -1,25 +1,23 @@
-.toggle-group__list{
+.toggle__list{
     list-style: none;
     padding-left: 0px;
-    margin-top: 15px;
+    padding: 0px;
+    margin: 0px;
 }
 
-.toggle-group__item {
+.toggle__item {
     display: flex;
     justify-content: flex-start;
     align-content: center;
     flex-wrap: wrap;
-    margin-bottom: 10px;
-    height: 24px;
 }
 
-.toggle-group__input {
+.toggle__input {
     content: "";
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
     position: relative;
     width: 40px;
     height: 20px;
@@ -30,7 +28,7 @@
     margin-right: 10px;
 }
 
-.toggle-group__input::after {
+.toggle__input::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -43,18 +41,13 @@
   transform: translateX(0);
 }
 
-.toggle-group__input:checked::after {
+.toggle__input:checked::after {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   transform: translateX(calc(100% + 7px));
   background-color: #fff;  
 }
 
-
-
-.toggle-group__label {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
+.toggle__label {
     font-size: 14px;
     line-height: 24px;
     color: rgba(31, 32, 65, 0.75);

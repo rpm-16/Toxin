@@ -7,7 +7,7 @@ mixin checkbox(heading, args)
             for item in objArgs
                 li.checkbox__list__item
                     .checkbox__list__input
-                        input(type= head.type)(checked= item.checked)
+                        input(type= head.type checked= item.checked)
                     .checkbox__list__label= item.label
                         if item.note 
                             .checkbox-group__note= item.note

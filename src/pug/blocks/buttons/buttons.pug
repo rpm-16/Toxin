@@ -1,3 +1,6 @@
 mixin button(args)
-    - var {name} = args
-    button(type="button")&attributes(attributes)= name
+    block variables
+      - let objButton = args
+        
+    block content
+        button(type="button")&attributes(attributes)= objButton.name
