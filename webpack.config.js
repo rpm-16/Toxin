@@ -86,13 +86,12 @@ module.exports = {
 
 
   plugins: [
-
+    
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     }),
-
-    
+   
     new HtmlWebpackPlugin(),
 
     // css new file
@@ -119,8 +118,5 @@ module.exports = {
     filename: `./${page.replace(/\.pug/,'.html')}`, 
     pretty: true,
   })),
-
-  // ...PAGES.map(page => console.log(page.replace(/\.pug/,'.html')))
-
   ],
 };

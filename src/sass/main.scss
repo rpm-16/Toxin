@@ -2,20 +2,15 @@
 @import '_colors';
 @import '_margins';
 @import '../pug/layouts/uikit-layout/uikit-layout';
-
 @import '../pug/pages/colorstypes/colorstypes';
 @import '../pug/pages/formelements/formelements';
 @import '../pug/pages/cards/cards';
-
 @import '../pug/blocks/uikit-colors/uikit-colors';
 @import '../pug/blocks/uikit-types/uikit-types';
-
-
 @import '../pug/blocks/form-group/form-group';
 @import '../pug/blocks/input/input';
 @import '../pug/blocks/input-dropdown/input-dropdown';
 @import '../pug/blocks/buttons/buttons';
-
 @import '../pug/blocks/date-dropdown/date-dropdown';
 @import '../pug/blocks/checkbox/checkbox';
 @import '../pug/blocks/radiobuttons/radiobuttons';
@@ -27,9 +22,10 @@
 @import '../pug/blocks/bullet-list/bullet-list';
 @import '../pug/blocks/pluses/pluses';
 @import '../pug/blocks/comment/comment';
-@import '../pug/blocks/calendar/calendar';
-
 @import '../pug/blocks/dialog/dialog';
 @import '../pug/blocks/price-calculator/price-calculator';
-
-
+@import '../pug/blocks/calendar/calendar';
+@import '../pug/blocks/room-card/room-card';
+@import '../pug/blocks/header/header';
+@import '../pug/blocks/logo/logo';
+@import '../pug/blocks/footer/footer';

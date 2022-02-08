@@ -1,4 +1,5 @@
 extends ../../layouts/uikit-layout/uikit-layout.pug
+
 include ../../blocks/dialog/dialog
 include ../../blocks/form-group/form-group
 include ../../blocks/date-dropdown/date-dropdown
@@ -8,12 +9,13 @@ include ../../blocks/buttons/buttons
 include ../../blocks/radiobuttons/radiobuttons
 include ../../blocks/toggle-buttons/toggle-buttons
 include ../../blocks/price-calculator/price-calculator
+include ../../blocks/room-card/room-card
 include ../../blocks/calendar/calendar
+
 
   block variables
    - let title = "Cards";
-   - let items = [{title: "Взрослые", count: 2}, {title: "Дети", count: 0}, {title:"Младенцы", count: 4}];
-    
+   - let items = [{title: "Взрослые", count: 0}, {title: "Дети", count: 0}];
 
   block content
     .container
@@ -32,9 +34,9 @@ include ../../blocks/calendar/calendar
 
           +dialog({title: "Регистрация аккаунта"})
             .mt20
-              +input({name: 'none', type: 'text', placeholder: "Имя"})
+              +input({name: '', type: 'text', placeholder: "Имя"})
             .mt10
-              +input({name: 'none', type: 'email', placeholder: "Фамилия"})
+              +input({name: '', type: 'email', placeholder: "Фамилия"})
             .mt10
               +radiobuttons({ type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }, {label: "Женщина"} ])
             .mt20
@@ -44,9 +46,9 @@ include ../../blocks/calendar/calendar
             .mt20
               +form-group({title: "Данные для входа в сервис", note: ""})
                 .mt5
-                  +input({name: 'none', type: 'email', placeholder: "Email"})
+                  +input({name: '', type: 'email', placeholder: "Email"})
                 .mt10
-                  +input({name: 'none', type: 'password', placeholder: "Пароль"})
+                  +input({name: '', type: 'password', placeholder: "Пароль"})
                 .mt10
                   +toggle({label: "Получать спецпредложения"})
                 .mt20 
@@ -55,8 +57,6 @@ include ../../blocks/calendar/calendar
                   .dialog__message
                     p.dialog__text Уже есть аккаунт на Toxin
                     +button({name: "Войти"}).withborder                
-                 
-
       .col-380
         +dialog({number: "888", roomType: "люкс", cost: "9 990"})
           .mt24
@@ -72,9 +72,9 @@ include ../../blocks/calendar/calendar
               
         +dialog({title: "Войти"})
           .mt20
-            +input({name: 'none', type: 'email', placeholder: "Email"})
+            +input({name: '', type: 'email', placeholder: "Email"})
           .mt10
-            +input({name: 'none', type: 'password', placeholder: "Пароль"})
+            +input({name: '', type: 'password', placeholder: "Пароль"})
           .mt20
           +button({name: "Войти"}).withbordericon
           .mt30
@@ -82,8 +82,9 @@ include ../../blocks/calendar/calendar
               p.dialog__text нет аккаунта на Toxin?
               +button({name: "Войти"}).withborder
       .col-320
-        .card
-          //- +calendar()
-        .room-card Комнаты
-        .room-card Комнаты
-
+        .mt1
+          .calendar
+        .mt40
+          +roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+        .mt40
+          +roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "840", roomType: "Luxe", cost: "9990", rate: 4, reviewCount: 65})

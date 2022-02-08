@@ -3,13 +3,7 @@ mixin like-buttons(heading, args)
     - let head = heading;
     - let arg = args;
 
-    .form-group
-        label.form-group_wrapper
-            .form-group__title= head.groupHeader
-            if head.note
-            .form-group__note= head.note
-
-        .like-button-wrapper
-            for t in arg
-                button(class= t.class type= head.type).like-button__button
-                    span= t.count          
+    .like-button
+        for t in arg
+            button(class= t.class type= head.type).like-button__button
+                span= t.count          
