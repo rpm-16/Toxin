@@ -1,6 +1,5 @@
 //- input field universal mixin, i hope. 
 
-<<<<<<< HEAD
 mixin input(args)
     //- - var {mclass, name, type, placeholder, id} = options
     - let objArgs = args
@@ -13,16 +12,3 @@ mixin input(args)
                 type= objArgs.type,
                 id= objArgs.id
             )          
-=======
-mixin input(options)
-    - var {label, note, mclass, name, type, placeholder, id} = options
-    
-    .form-group
-        label.form-group_wrapper
-            .form-group__title= label
-            if note
-            .form-group__note= note
-
-        .input_wrapper
-            input.form-group__input(class= mclass, placeholder= placeholder, name= name, type= type, id= id)          
->>>>>>> main
