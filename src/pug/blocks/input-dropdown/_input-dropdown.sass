@@ -1,0 +1,47 @@
+.input-dropdown
+   &__input
+      background-image: url(../img/expand_more.png)
+      background-repeat: no-repeat
+      background-position: 95% 
+
+      // &:focus
+      //    background: red
+    
+   &_item-list
+      position: absolute
+      z-index: 100
+      background: #FFF
+      margin-top: -25px
+      border: 1px solid rgba(31, 32, 65, 0.5)
+      border-radius: 0 0 4px 4px 
+      list-style: none
+      width: 100%
+      padding-left: 0px
+
+   &__item
+      display: flex
+      justify-content: space-between
+      height: 28px
+      padding: 4px 9px 6px 14px
+      font-size: 12px
+      font-weight: bold
+      align-items: center
+      text-transform: uppercase
+
+      span 
+         padding: 0px 5px
+
+      button
+         width: 30px
+         height: 30px
+         border-radius: 15px 
+         border: 1px solid rgba(31, 32, 65, 0.5)
+         color: rgba(31, 32, 65, 0.5)
+         background: #FFF
+
+#dropdown 
+   display: none
+
+.expanded
+   display: block 
+     

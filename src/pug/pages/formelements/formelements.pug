@@ -24,6 +24,7 @@ block variables
 
 block content
   .container
+<<<<<<< HEAD
     .col-3x.mr126 
       .mt-2
         +form-group({title: "Text Field", note: "default"})
@@ -68,6 +69,18 @@ block content
       .mt40
         +form-group({title: "rate button", note: ""})
           +rate-button([{rate: 4},{rate: 5}])
+=======
+    .col-3x 
+      .mt-1
+        +input({label: "Text Field", note: "default", mclass: "", name: 'none', type: 'email', placeholder: "Email", id: ""})
+      .mt22
+        +input({label: "Text Field", note: "hover/focus", mclass: "", name: 'none', type: 'text', placeholder: "This is pretty awesome", id: ""})
+      .mt22
+        +input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown__input", name: '', type: 'text',
+                            placeholder: " ", items: "" , showButtons: false, id: 'drop1' })
+      .mt22
+        +input({label: "Masked Text Field", note: "hover/focus", mclass: "", name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
+>>>>>>> main
     .col-3x
       .mt0
         .w266

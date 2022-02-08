@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let dropdown_toggles = document.querySelectorAll('.input-dropdown-group__input');
 
 for (let i = 0; i < dropdown_toggles.length; i++) {
@@ -50,4 +51,16 @@ function handler() {
       hideDropdown();
     break;
   }
+=======
+drop1.addEventListener("focus", showDrop);
+// drop1.addEventListener("blur", hideDrop);
+
+// drop1.css.background = 'yellow';
+// function snowDropdown() {
+//   alert('go');
+// }
+
+function showDrop() {
+  document.getElementById('dropdown').classList.add("expanded");
+>>>>>>> main
 }
