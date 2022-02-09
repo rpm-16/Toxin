@@ -27,7 +27,7 @@ block content
     .col-3x.mr126 
       .mt-2
         +form-group({title: "Text Field", note: "default"})
-          +input({mclass: "mt5", name: 'none', type: 'email', placeholder: "Email"})
+          +input({mclass: "", name: 'none', type: 'email', placeholder: "Email"})
       .mt20
         +form-group({title: "Text Field", note: "hover / focus"})
           +input({mclass: "input-group__input__hover mt6", name: 'hover', type: 'text', placeholder: "This is pretty awesome"})
@@ -37,7 +37,7 @@ block content
             items: items, showButtons: false, id: "block1" })
       .mt22
         +form-group({title: "Masked Text Field", note: ""})
-          +input({mclass: "mt5", name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
+          +input({mclass: "", name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
       .mt40
         +form-group({title: "", note: ""})
           +date-dropdown( [{label:'date dropdown', placeholder: "ДД.ММ.ГГГГ"}, 

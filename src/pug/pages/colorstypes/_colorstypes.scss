@@ -1,16 +1,20 @@
-.container {
+.uikit-container {
     display: flex;
-    flex-direction: row;
-    min-width: 300px; }
+    justify-content: space-evenly;
+    min-width: 320px;     
+    margin: 0 auto;
+    margin-top: 5px;
 
     .col-2x {
-        flex: 1 0 auto;
-        flex-basis: 50%;
-    }
-
-@media screen and (max-width: 900px) {
-    .container {
-        flex-direction: column; 
+        width: 510px;
     }
 }
-   
+
+@media screen and (max-width: 900px) {
+    .uikit-container {
+        flex-direction: column; 
+        .col-2x {
+            width: auto;
+        }
+    }
+}

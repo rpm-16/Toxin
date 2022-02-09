@@ -26,7 +26,7 @@ module.exports = {
   entry: '/src/index.js',
   devtool: 'eval-source-map',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './docs'),
     filename: 'js/[name]index.js',
   },
 
@@ -52,11 +52,8 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // Creates `style` nodes from JS strings
           MiniCssExtractPlugin.loader,
-          // Translates CSS into CommonJS
           "css-loader",
-          // Compiles Sass to CSS
           "sass-loader",
         ],
       },
@@ -70,29 +67,41 @@ module.exports = {
       },
     // Copy
     // {
-    //   test: /(\.(woff2?|ttf|eot|otf)$|font.*\.svg$)/,
+    //   test: /(\.(png|jpe?g|gif|svg)$)/,
     //   use: [
     //     {
-    //       loader: 'file-loader?name=./fonts/[name].[ext]'
+    //       loader: 'file-loader',
+    //       options: {
+    //         name:'[name].[ext]',
+    //         outputPath: 'img',
+    //       }
+    //     },
+    //   ],
+    // }, 
+    // {
+    //   test: /(\.(woff|svg|ttf|otf|eot|)$|font.*\svg$)/,
+    //   use: [
+    //     {
+    //       loader: 'file-loader?name=./fonts/[name].[ext]',
     //     },
     //   ],
     // }, 
 
-  // End rules  
+  // End rules  bnvbn
   ],
 },
 
-    
-
-
   plugins: [
-    
-    new webpack.ProvidePlugin({
+      new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     }),
    
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Custom template',
+      // template: './src/pug/pages/index/index.pug',
+      filename: 'main.html',
+    }),
 
     // css new file
     new MiniCssExtractPlugin({
@@ -102,10 +111,11 @@ module.exports = {
   // copywebpack
   new CopyPlugin({
     patterns: [
-    { from: `./src/fonts`, to: `fonts` },
-    { from: `./src/img`, to: `img` },
-    { from: `./src/favicons`, to: 'favicons' },
+    { from: `./src/fonts`, to: `./fonts` },
+    { from: `./src/img`, to: `./img` },
+    { from: `./src/favicons`, to: './favicons' },
   ]}),
+
   // Pug
   // new HtmlWebpackPlugin({
   //   template: `.src/pug/pages/colorstype/colorstrype.pug`,
@@ -115,7 +125,7 @@ module.exports = {
 
   ...PAGES.map((page, index) => new HtmlWebpackPlugin({
     template: `${PAGES_DIR}/${PAGES_FOLDERS[index]}/${page}`,
-    filename: `./${page.replace(/\.pug/,'.html')}`, 
+    filename: `./${page.replace(/\.pug/,'.html')}`,
     pretty: true,
   })),
   ],

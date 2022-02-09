@@ -1,0 +1,38 @@
+.rpm {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+    main{ margin-top: 50px;}
+
+    .rpm-wrapper{
+        font-family: monospace;
+        background: rgba(0, 51, 102, 0.5);
+        padding: 10px;
+        color: white;
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        box-sizing: border-box;
+    
+        .rpm__phone {margin: 0px 20px;}
+    }
+    
+        .rpm-bones {
+        display: grid;
+        grid-template-columns: 280px 280px 280px 280px;
+        gap: 20px;
+    }
+    
+    .rpm-bones__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(0, 51, 102, 0.2);
+        padding: 10px;
+    }
+    
+    .rpm-bones__img img {width: 100%;}
+}
+
