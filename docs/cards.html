@@ -1,378 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cards</title>
-  <script defer src="js/mainindex.js"></script><link href="./css/main.css" rel="stylesheet"></head>
-  <body> 
-    <div class="wrapper">
-      <header></header>
-      <main>
-        <div class="container">
-          <div class="col-380">
-            <div class="mt5">
-              <section class="dialog">
-                <div class="dialog__header">
-                  <h2 class="dialog__title">Найдём номера под ваши пожелания</h2>
-                </div>
-                <div class="dialog__content">
-                  <form class="dialog__form" action="self" method="post">
-                    <div class="mt20">
-                      <div class="date-dropdown">
-                        <div class="date-dropdown-item">
-                          <label class="data-dropdown-wrapper">
-                            <div class="date-dropdown__label">Прибытие</div>
-                            <div class="date-dropdown-input-wrapper">
-                              <input class="date-dropdown__input date" type="date">
-                            </div>
-                          </label>
-                          <div class="date-dropdown__datepicker"></div>
-                        </div>
-                        <div class="date-dropdown-item">
-                          <label class="data-dropdown-wrapper">
-                            <div class="date-dropdown__label">Выезд</div>
-                            <div class="date-dropdown-input-wrapper">
-                              <input class="date-dropdown__input date" type="date">
-                            </div>
-                          </label>
-                          <div class="date-dropdown__datepicker"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt20">
-                      <div class="form-group">
-                        <label class="form-group__wrapper">
-                          <div class="form-group__title">Гости</div>
-                        </label>
-                        <div class="form-group__body">
-                          <div class="input-dropdown-group">
-                            <div class="input-group">
-                              <input class="input-group__input input-dropdown-group__input mt5" placeholder="Сколько гостей " name="dropdown" type="text" id="bloc">
-                            </div>
-                            <div class="input-dropdown-group__options">
-                              <ul class="input-dropdown-group__options__list"></ul>
-                              <li class="input-dropdown-group__options__item">Взрослые
-                                <div class="input-dropdown-group__options__controls">
-                                  <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown-group__options__itemcount">0</span>
-                                  <button type="button" data-action="addGuest">+</button>
-                                </div>
-                              </li>
-                              <li class="input-dropdown-group__options__item">Дети
-                                <div class="input-dropdown-group__options__controls">
-                                  <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown-group__options__itemcount">0</span>
-                                  <button type="button" data-action="addGuest">+</button>
-                                </div>
-                              </li>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt33">
-                      <button class="withbordericon" type="button">Подобрать номер</button>
-                    </div>
-                  </form>
-                </div>
-              </section>
-              <section class="dialog">
-                <div class="dialog__header">
-                  <h2 class="dialog__title">Регистрация аккаунта</h2>
-                </div>
-                <div class="dialog__content">
-                  <form class="dialog__form" action="self" method="post">
-                    <div class="mt20">
-                      <div class="input-group">
-                        <input class="input-group__input" placeholder="Имя" name="" type="text">
-                      </div>
-                    </div>
-                    <div class="mt10">
-                      <div class="input-group">
-                        <input class="input-group__input" placeholder="Фамилия" name="" type="email">
-                      </div>
-                    </div>
-                    <div class="mt10">
-                      <div class="radiobutton">
-                        <ul class="radiobutton__list">
-                          <li class="radiobutton__item">
-                            <input type="radio" name="radio" checked>
-                            <div class="radiobutton__label">Мужчина</div>
-                          </li>
-                          <li class="radiobutton__item">
-                            <input type="radio" name="radio">
-                            <div class="radiobutton__label">Женщина</div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="mt20">
-                      <div class="form-group">
-                        <label class="form-group__wrapper">
-                          <div class="form-group__title">Дата рождения</div>
-                        </label>
-                        <div class="form-group__body">
-                          <div class="mt5">
-                            <div class="input-group">
-                              <input class="input-group__input" placeholder="ДД.ММ.ГГГГ" name="" type="text">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt20">
-                      <div class="form-group">
-                        <label class="form-group__wrapper">
-                          <div class="form-group__title">Данные для входа в сервис</div>
-                        </label>
-                        <div class="form-group__body">
-                          <div class="mt5">
-                            <div class="input-group">
-                              <input class="input-group__input" placeholder="Email" name="" type="email">
-                            </div>
-                          </div>
-                          <div class="mt10">
-                            <div class="input-group">
-                              <input class="input-group__input" placeholder="Пароль" name="" type="password">
-                            </div>
-                          </div>
-                          <div class="mt10">
-                            <div class="toggle">
-                              <ul class="toggle__list">
-                                <li class="toggle__item">
-                                  <input class="toggle__input" type="checkbox">
-                                  <div class="toggle__label">Получать спецпредложения</div>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div class="mt20"> 
-                            <button class="withbordericon" type="button">Перейти к оплате</button>
-                          </div>
-                          <div class="mt30">
-                            <div class="dialog__message">
-                              <p class="dialog__text">Уже есть аккаунт на Toxin</p>
-                              <button class="withborder" type="button">Войти</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </section>
-            </div>
-          </div>
-          <div class="col-380">
-            <section class="dialog">
-              <div class="dialog__header">
-                <div class="dialog__title-wrapper">
-                  <h2 class="dialog__room-title">№
-                    <div class="dialog__number">888 </div>
-                    <div class="dialog__roomtype"> люкс</div>
-                  </h2>
-                  <div class="dialog__cost">
-                    <div class="dialog__cost--bold">9 990₽ 
-                    </div>в сутки
-                  </div>
-                </div>
-              </div>
-              <div class="dialog__content">
-                <form class="dialog__form" action="self" method="post">
-                  <div class="mt24">
-                    <div class="date-dropdown">
-                      <div class="date-dropdown-item">
-                        <label class="data-dropdown-wrapper">
-                          <div class="date-dropdown__label">Прибытие</div>
-                          <div class="date-dropdown-input-wrapper">
-                            <input class="date-dropdown__input date" type="date">
-                          </div>
-                        </label>
-                        <div class="date-dropdown__datepicker"></div>
-                      </div>
-                      <div class="date-dropdown-item">
-                        <label class="data-dropdown-wrapper">
-                          <div class="date-dropdown__label">Выезд</div>
-                          <div class="date-dropdown-input-wrapper">
-                            <input class="date-dropdown__input date" type="date">
-                          </div>
-                        </label>
-                        <div class="date-dropdown__datepicker"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mt20">
-                    <div class="form-group">
-                      <label class="form-group__wrapper">
-                        <div class="form-group__title">Гости</div>
-                      </label>
-                      <div class="form-group__body">
-                        <div class="input-dropdown-group">
-                          <div class="input-group">
-                            <input class="input-group__input input-dropdown-group__input mt5" placeholder="Сколько гостей " name="dropdown" type="text" id="bloc">
-                          </div>
-                          <div class="input-dropdown-group__options">
-                            <ul class="input-dropdown-group__options__list"></ul>
-                            <li class="input-dropdown-group__options__item">Взрослые
-                              <div class="input-dropdown-group__options__controls">
-                                <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown-group__options__itemcount">0</span>
-                                <button type="button" data-action="addGuest">+</button>
-                              </div>
-                            </li>
-                            <li class="input-dropdown-group__options__item">Дети
-                              <div class="input-dropdown-group__options__controls">
-                                <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown-group__options__itemcount">0</span>
-                                <button type="button" data-action="addGuest">+</button>
-                              </div>
-                            </li>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mt10">
-                    <table class="price">
-                      <tbody>
-                        <tr> 
-                          <td>9990 x 4 суток</td>
-                          <td>39960Р</td>
-                        </tr>
-                        <tr> 
-                          <td>Сбор за услуги: скидка 2179Р</td>
-                          <td>0Р</td>
-                        </tr>
-                        <tr> 
-                          <td>Сбор за дополнительные услуги</td>
-                          <td>300Р</td>
-                        </tr>
-                      </tbody>
-                      <tfoot class="total-cost"> 
-                        <tr>
-                          <td>Итого</td>
-                          <td>38081Р</td>
-                        </tr>
-                      </tfoot>
-                    </table>
-                  </div>
-                  <div class="mt20">
-                    <button class="withbordericon" type="button">Забронировать</button>
-                  </div>
-                </form>
-              </div>
-            </section>
-            <section class="dialog">
-              <div class="dialog__header">
-                <h2 class="dialog__title">Войти</h2>
-              </div>
-              <div class="dialog__content">
-                <form class="dialog__form" action="self" method="post">
-                  <div class="mt20">
-                    <div class="input-group">
-                      <input class="input-group__input" placeholder="Email" name="" type="email">
-                    </div>
-                  </div>
-                  <div class="mt10">
-                    <div class="input-group">
-                      <input class="input-group__input" placeholder="Пароль" name="" type="password">
-                    </div>
-                  </div>
-                  <div class="mt20"></div>
-                  <button class="withbordericon" type="button">Войти</button>
-                  <div class="mt30">
-                    <div class="dialog__message">
-                      <p class="dialog__text">нет аккаунта на Toxin?</p>
-                      <button class="withborder" type="button">Войти</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </section>
-          </div>
-          <div class="col-320">
-            <div class="mt1">
-              <div class="calendar"></div>
-            </div>
-            <div class="mt40">
-              <div class="room-card">
-                <div class="room-card__gallery">
-                  <ul>
-                    <li><img src="./img/image1.png"></li>
-                    <li><img src="./img/image2.png"></li>
-                  </ul>
-                  <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
-                  <div class="room-card__controls"> 
-                    <ul>
-                      <li> </li>
-                      <li> </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="room-card__description">
-                  <div class="room-card__description-title-wrapper">
-                    <h2 class="room-card__description-title">№
-                      <div class="room-card__description-number">888 </div>
-                      <div class="room-card__description-roomtype"> Luxe</div>
-                    </h2>
-                    <div class="room-card__description-cost--bold">9990₽ 
-                      <div class="room-card__description-cost">в сутки</div>
-                    </div>
-                  </div>
-                  <div class="room-card__description-row">
-                    <div class="room-card__rate">
-                      <div class="rate-button-wrapper">
-                        <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="room-card__review--bold">145 
-                      <div class="room-card__review">Отзывов</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="mt40">
-              <div class="room-card">
-                <div class="room-card__gallery">
-                  <ul>
-                    <li><img src="./img/image1.png"></li>
-                    <li><img src="./img/image2.png"></li>
-                  </ul>
-                  <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
-                  <div class="room-card__controls"> 
-                    <ul>
-                      <li> </li>
-                      <li> </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="room-card__description">
-                  <div class="room-card__description-title-wrapper">
-                    <h2 class="room-card__description-title">№
-                      <div class="room-card__description-number">840 </div>
-                      <div class="room-card__description-roomtype"> Luxe</div>
-                    </h2>
-                    <div class="room-card__description-cost--bold">9990₽ 
-                      <div class="room-card__description-cost">в сутки</div>
-                    </div>
-                  </div>
-                  <div class="room-card__description-row">
-                    <div class="room-card__rate">
-                      <div class="rate-button-wrapper">
-                        <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
-                        </button>
-                      </div>
-                    </div>
-                    <div class="room-card__review--bold">65 
-                      <div class="room-card__review">Отзывов</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-  </body>
-</html>
+<head><script defer src="js/mainindex.js"></script><link href="./css/main.css" rel="stylesheet"></head>Html Webpack Plugin:
+<pre>
+  Error: Child compilation failed:
+  Module build failed (from ./node_modules/pug-loader/index.js):
+  Error: Can't resolve '../blocks/head/head.pug' in 'D:\MyWorks\WebDev\PSD2HTML\Toxin\src\pug\layouts\main'
+      at finishWithoutResolve (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:293:18)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:362:15
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:410:5
+      at eval (eval at create (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:410:5
+      at eval (eval at create (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:410:5
+      at eval (eval at create (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:410:5
+  ModuleBuildError: Module build failed (from ./node_modules/pug-loader/index.js):
+  Error: Can't resolve '../blocks/head/head.pug' in 'D:\MyWorks\WebDev\PSD2HTML\Toxin\src\pug\layouts\main'
+      at finishWithoutResolve (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:293:18)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:362:15
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:410:5
+      at eval (eval at create (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:410:5
+      at eval (eval at create (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:87:43
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:410:5
+      at eval (eval at create (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:410:5
+      at processResult (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\webpack\lib\NormalModule.js:751:19)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\webpack\lib\NormalModule.js:853:5
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\loader-runner\lib\LoaderRunner.js:399:11
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\loader-runner\lib\LoaderRunner.js:251:18
+      at context.callback (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\loader-runner\lib\LoaderRunner.js:124:13)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\pug-loader\index.js:43:22
+      at finishWithoutResolve (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:296:11)
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:362:15
+      at D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\enhanced-resolve\lib\Resolver.js:410:5
+      at eval (eval at create (D:\MyWorks\WebDev\PSD2HTML\Toxin\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+  
+  - Resolver.js:293 finishWithoutResolve
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:293:18
+  
+  - Resolver.js:362 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:362:15
+  
+  - Resolver.js:410 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:410:5
+  
+  
+  - Resolver.js:410 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:410:5
+  
+  
+  - DescriptionFilePlugin.js:87 
+    [Toxin]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:87:43
+  
+  - Resolver.js:410 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:410:5
+  
+  
+  - Resolver.js:410 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:410:5
+  
+  - ModuleBuildError: Module build failed (from ./node_modules/pug-loader/index.js):
+  
+  - Error: Can't resolve '../blocks/head/head.pug' in 'D:\MyWorks\WebDev\PSD2HTML\Toxin\src\pug\layouts\main'
+  
+  - Resolver.js:293 finishWithoutResolve
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:293:18
+  
+  - Resolver.js:362 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:362:15
+  
+  - Resolver.js:410 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:410:5
+  
+  
+  - Resolver.js:410 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:410:5
+  
+  
+  - DescriptionFilePlugin.js:87 
+    [Toxin]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:87:43
+  
+  - Resolver.js:410 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:410:5
+  
+  
+  - Resolver.js:410 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:410:5
+  
+  - NormalModule.js:751 processResult
+    [Toxin]/[webpack]/lib/NormalModule.js:751:19
+  
+  - NormalModule.js:853 
+    [Toxin]/[webpack]/lib/NormalModule.js:853:5
+  
+  - LoaderRunner.js:399 
+    [Toxin]/[loader-runner]/lib/LoaderRunner.js:399:11
+  
+  - LoaderRunner.js:251 
+    [Toxin]/[loader-runner]/lib/LoaderRunner.js:251:18
+  
+  - LoaderRunner.js:124 context.callback
+    [Toxin]/[loader-runner]/lib/LoaderRunner.js:124:13
+  
+  - index.js:43 
+    [Toxin]/[pug-loader]/index.js:43:22
+  
+  - Resolver.js:296 finishWithoutResolve
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:296:11
+  
+  - Resolver.js:362 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:362:15
+  
+  - Resolver.js:410 
+    [Toxin]/[enhanced-resolve]/lib/Resolver.js:410:5
+  
+  
+  - child-compiler.js:169 
+    [Toxin]/[html-webpack-plugin]/lib/child-compiler.js:169:18
+  
+  - Compiler.js:559 
+    [Toxin]/[webpack]/lib/Compiler.js:559:11
+  
+  - Compiler.js:1129 
+    [Toxin]/[webpack]/lib/Compiler.js:1129:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [Toxin]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1125 
+    [Toxin]/[webpack]/lib/Compiler.js:1125:33
+  
+  - Compilation.js:2782 finalCallback
+    [Toxin]/[webpack]/lib/Compilation.js:2782:11
+  
+  - Compilation.js:3087 
+    [Toxin]/[webpack]/lib/Compilation.js:3087:11
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [Toxin]/[tapable]/lib/Hook.js:18:14
+  
+</pre>

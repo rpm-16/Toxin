@@ -3,7 +3,10 @@
     justify-content: center;
     margin: auto;
 
-    main{ margin-top: 50px;}
+    main{ 
+        margin: 50px auto;
+        max-width: 1200px;
+    }
 
     .rpm-wrapper{
         font-family: monospace;
@@ -20,12 +23,15 @@
     }
     
         .rpm-bones {
-        display: grid;
-        grid-template-columns: 280px 280px 280px 280px;
-        gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 30px auto;
+            justify-content: space-evenly;
     }
     
     .rpm-bones__item{
+        flex-basis: 280px;
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -3,19 +3,19 @@ include ../buttons/buttons
 mixin input-dropdown(args)
   - let objArgs = args;
    
- 
-  .input-dropdown-group
-    +input(args)(value= countString || objArgs.placeholder, readonly= "readonly")
-    .input-dropdown-group__options(class=objArgs.inline? "expanded": "")
-      ul.input-dropdown-group__options__list
-      for item in objArgs.items
-        li.input-dropdown-group__options__item= item.title
-          .input-dropdown-group__options__controls
-            button(type="button" data-action="delGuest" disabled= item.count === 0) -
-            span.input-dropdown-group__options__itemcount= item.count         
-            button(type="button" data-action="addGuest" disabled= item.count > 7) +
+  .input-dropdown.js-input-dropdown
+    +input(args)(readonly= "readonly")
+    .input-dropdown__options(class=objArgs.inline? "expanded": "", tabindex)
+      ul.input-dropdown__controls
+        for item in objArgs.items
+          li.input-dropdown__item= item.title
+            .wrp
+              button(type="button" data-action="delGuest" disabled= item.count === 0) -
+              span.input-dropdown__itemcount= item.count         
+              button(type="button" data-action="addGuest" disabled= item.count > 7) +
+
       if objArgs.buttons        
-        .buttons 
+        .input-dropdown__buttons 
           +button({name: "Очистить"})(data-action="clear").withoutbg
           +button({name: "Применить"})(data-action="submit").withoutbg
 

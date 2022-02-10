@@ -1,8 +1,14 @@
+.toggle {
+
+}
+
 .toggle__list{
     list-style: none;
     padding-left: 0px;
     padding: 0px;
     margin: 0px;
+    display: flex;
+    align-items: center;
 }
 
 .toggle__item {
@@ -49,6 +55,6 @@
 
 .toggle__label {
     font-size: 14px;
-    line-height: 24px;
+    line-height: 22px;
     color: rgba(31, 32, 65, 0.75);
 }

@@ -3,10 +3,14 @@
 @import '_margins';
 
 @import '../pug/layouts/uikit-layout/uikit-layout';
+@import '../pug/layouts/main/main';
 @import '../pug/pages/index/index';
+
 @import '../pug/pages/colorstypes/colorstypes';
 @import '../pug/pages/formelements/formelements';
 @import '../pug/pages/cards/cards';
+
+
 @import '../pug/blocks/uikit-colors/uikit-colors';
 @import '../pug/blocks/uikit-types/uikit-types';
 @import '../pug/blocks/form-group/form-group';

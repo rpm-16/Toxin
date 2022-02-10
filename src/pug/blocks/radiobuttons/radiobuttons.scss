@@ -73,3 +73,9 @@
     color: rgba(31, 32, 65, 0.5);
     margin-left: 10px;
 }
+
+.row-inline {
+    display: flex;
+    justify-content: row;
+    flex-direction: flex-start;
+}
