@@ -1,0 +1,78 @@
+.type-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 0;
+    float: right;
+
+    &__item {display: flex;}
+
+    &__block {
+        text-align: right;
+        width: 37px;
+        p {
+            margin: 0;}
+    }
+
+    &__description {
+        margin-left: 30px;
+        align-items: flex-start;
+        max-width: 387px;
+        p {
+            white-space: pre-wrap;
+            margin: 0;}
+        }
+}
+
+//  отрефактторить эту шляпу потом
+
+.type-list__item:first-child 
+    {font-size: 24px;}
+.type-list__item:first-child .type-list_block p
+    {font-weight: normal;
+    color: rgba(6, 6, 12, 0.25);}
+// #type-list .list_item:first-child .item_description p
+//     font-weight: bold;
+
+// #type-list .list_item:nth-child(2)
+//     margin-top: 52px;
+// #type-list .list_item:nth-child(2) .item_block p
+//     font-size: 19px;
+//     font-weight: normal;
+//     color: rgba(31, 32, 65, 0.25);
+// #type-list .list_item:nth-child(2) .item_description
+// #type-list .list_item:nth-child(2) .item_description p
+//     font-size: 19px;
+//     line-height: 24px;
+//     font-weight: bold;
+
+// #type-list .list_item:nth-child(3)
+//     margin-top: 50px;
+// #type-list .list_item:nth-child(3) .item_block p
+//     font-size: 12px;
+//     font-weight: normal;
+//     color: rgba(31, 32, 65, 0.25);
+// #type-list .list_item:nth-child(3) .item_description p
+//     font-size: 12px;
+//     font-weight: bold;
+    
+// #type-list .list_item:nth-child(4)
+//     margin-top: 48px;
+// #type-list .list_item:nth-child(4) .item_block p
+//     font-size: 14px;
+//     font-weight: normal;
+//     color: rgba(31, 32, 65, 0.25);
+// #type-list .list_item:nth-child(4) .item_description p
+//     font-size: 14px;
+//     font-weight: 400;
+//     line-height: 24px;
+//     color: rgba(31, 32, 65, 0.75);
+
+// @media screen and (max-width: 900px) 
+//     #type-list;
+//             float: left;
+//             margin-top: 50px;
+
+// @media screen and (max-width: 400px) 
+//     .item_description;
+//         max-width: 100%;

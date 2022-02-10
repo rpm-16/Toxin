@@ -1,9 +1,9 @@
-mixin list-types(id, list)
- ul(id=id)
-    for item in list 
-     li.list_item
-        .item_block
-            p.type-list__name= item.name
-        .item_description
-            p.type-list__description= item.desc
-            
+mixin list-types(list)
+
+	ul.type-list
+		for item in list
+			li.type-list__item
+				.type-list__block
+					p.type-list__name= item.name
+				.item_description
+					p.type-list__description= item.desc
