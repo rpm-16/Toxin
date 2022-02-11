@@ -7,14 +7,17 @@
 
     .col-2x {
         width: 510px;
+        align-self: flex-start;
+        justify-content: flex-start;
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px) {
     .uikit-container {
         flex-direction: column; 
         .col-2x {
             width: auto;
+            justify-content: flex-start;
         }
     }
 }
