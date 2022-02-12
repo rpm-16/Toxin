@@ -1,4 +1,5 @@
 include ../../blocks/input/input
+include ../../blocks/form-group/form-group
 
 mixin siteNav(args)
    - let objArgs = args
@@ -36,26 +37,26 @@ footer.footer
          .footer__nav4
             .mt5
                +form-group({title: "Подписка"})
-               .txt.mt20
+               .txt.mt16
                   p Получайте специальные предложения и новости сервиса
-            .mt10
+            .mt24
                +input({mclass: "", name: 'none', type: 'email', placeholder: "Email"})
 
-   .footer_container
+   .footer__bottom
       .footer__copyright Copyright &#169 2018 Toxin отель. Все права защищены.
       .footer__share-btns 
          img(src="./img/tweet-btn.png", alt="Мы в Twitter")
          img(src="./img/facebook-btn.png", alt="Мы в Facebook")
          img(src="./img/instagram-btn.png", alt="Мы в Instagramm")
 
-   .mt40
-      .footer-mobile_container
-         .mt-10
-            include ../logo/logo
-         .mt20
-            .footer-mobile__copyright Copyright &#169 2018 Toxin отель. Все права защищены.
-         .mt20
-            .footer-mobile__share-btns 
-               img(src="./img/tweet-btn.png", alt="Мы в Twitter")
-               img(src="./img/facebook-btn.png", alt="Мы в Facebook")
-               img(src="./img/instagram-btn.png", alt="Мы в Instagramm")
+   //- .mt40
+   //-    .footer-mobile_container
+   //-       .mt-10
+   //-          include ../logo/logo
+   //-       .mt20
+   //-          .footer-mobile__copyright Copyright &#169 2018 Toxin отель. Все права защищены.
+   //-       .mt20
+   //-          .footer-mobile__share-btns 
+   //-             img(src="./img/tweet-btn.png", alt="Мы в Twitter")
+   //-             img(src="./img/facebook-btn.png", alt="Мы в Facebook")
+   //-             img(src="./img/instagram-btn.png", alt="Мы в Instagramm")

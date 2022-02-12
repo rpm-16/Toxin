@@ -2,7 +2,6 @@ mixin button(args)
     block variables
       - let objButton = args
         
-    block content
       if objButton.hovered 
         //- -  objButton.class += " withbg--hover";
       button(type="button")(class= objButton.class, class=objButton.class + "--" + objButton.size)&attributes(attributes)

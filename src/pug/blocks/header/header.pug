@@ -22,19 +22,17 @@ mixin navigate(arr)
 
 header.header
   include ../logo/logo
-
   .wrap
     nav.header__nav
       +navigate(navItems)
-
     ul.loginform
       if userName
         li.logined= userName
       else
         li 
-          +button({name: "Войти"}).withborder.h34.w87
+          +button({name: "Войти", class: "withborder", size: "w87h34"})
         li 
-          +button({name: "Зарегистрироваться"}).withbordericon.h34.w196
+          +button({name: "Зарегистрироваться", class: "withbg", size: "w196h34"})         
 
 
     

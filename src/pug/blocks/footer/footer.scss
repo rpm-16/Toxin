@@ -1,5 +1,12 @@
 .footer{
+    height: 70px;
     width: 1160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;    
+    margin: auto;
+    flex-direction: column;
 }
 .footer-row{
     padding: 100px 0px;
@@ -11,27 +18,30 @@
     height: 172px;
 }
 
-.footer_container {
+.footer__bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    
+    .footer__copyright {
+        height: 70px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(31, 32, 65, 0.75);
+        align-items: center;
+        display: flex;
+    }
+    
+    .footer__share-btns img {
+        margin-left: 22px;
+    }
 }
 
-.footer__copyright {
-    height: 70px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 17px;
-    color: rgba(31, 32, 65, 0.75);
-    align-items: center;
-    display: flex;
-}
 
-.footer__share-btns img {
-    margin-left: 20px;
-}
 
 .footer_slogan {
     font-family: Montserrat;

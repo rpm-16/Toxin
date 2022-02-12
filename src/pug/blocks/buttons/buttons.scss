@@ -27,6 +27,10 @@
         width: 320px;
         height: 44px;
     }
+    &--w196h34{
+        width: 196px;
+        height: 34px;
+    }
 }
 
 // с бордюром без фона
@@ -34,12 +38,12 @@
     cursor: pointer;
     border: none;
     text-transform: uppercase;
-    border-radius: 22px; 
+    border-radius: 20px; 
     background: linear-gradient(180deg, $primary-color 0%, #8BA4F9 100%);
-    box-sizing: border-box;
-    outline: none;
         span {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background: #fff;
             font-size: 12px;
             line-height: 15px;
@@ -56,13 +60,30 @@
 
     &--w99h44{
         width: 99px;
+        height: 44px;
+        outline: none;
+        padding: 2px;
         span {
+            margin: 0px;
             height: 40px;
             width: 100%;
-            text-align: center;
-            border-radius: 22px;
+            border-radius: 20px;
         }
     }
+
+    &--w87h34{
+        width: 87px;
+        height: 34px;
+        outline: none;
+        padding: 2px;
+        span {
+            margin: 0px;
+            height: 30px;
+            width: 100%;
+            border-radius: 15px;
+        }
+    }
+
 }
 // без бордюра без фона
 

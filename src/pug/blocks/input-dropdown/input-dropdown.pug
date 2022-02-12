@@ -16,5 +16,5 @@ mixin input-dropdown(args)
 
       if objArgs.buttons        
         .input-dropdown__buttons 
-          +button({name: "Очистить"})(data-action="clear").withoutbg
-          +button({name: "Применить"})(data-action="submit").withoutbg
+          +button({name: "Очистить", class: "simple"})(data-action="clear")
+          +button({name: "Применить", class: "simple"})(data-action="submit")

@@ -1,21 +1,184 @@
-Html Webpack Plugin:
-<pre>
-  TypeError: Cannot read properties of undefined (reading 'call')
-  
-  - landingpage.pug:160 eval
-    [.]/[html-webpack-plugin]/lib/loader.js!./src/pug/pages/landingpage/landingpage.pug:160:26
-  
-  - landingpage.pug:197 template
-    [.]/[html-webpack-plugin]/lib/loader.js!./src/pug/pages/landingpage/landingpage.pug:197:7
-  
-  - index.js:450 
-    [Toxin]/[html-webpack-plugin]/index.js:450:16
-  
-  - runMicrotasks
-  
-  - task_queues:96 processTicksAndRejections
-    node:internal/process/task_queues:96:5
-  
-  - async Promise.all
-  
-</pre>
+<!DOCTYPE html>
+<html lang="ru">
+  <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <title>Landing Page</title>
+  <script defer src="js/mainindex.js"></script><link href="./css/main.css" rel="stylesheet"></head>
+  <body> 
+    <div class="site-wrapper">
+      <header class="header">
+<div class="header-logo"><img src="./img/logo.png" alt="Название компании"><img src="./img/logo_text.png" alt="Название компании"></div>
+        <div class="wrap">
+          <nav class="header__nav">
+                  <ul> 
+                    <li><a href="#">О нас</a></li>
+                    <li><a class="expand" href="#">Услуги</a>
+                            <ul> 
+                              <li><a href="#">услуга 1</a></li>
+                              <li><a href="#">услуга </a></li>
+                            </ul>
+                    </li>
+                    <li><a href="#">Вакансии</a></li>
+                    <li><a href="#">Новости</a></li>
+                    <li><a class="expand" href="#">Соглашения</a>
+                            <ul> 
+                              <li><a href="#">услуга 1</a></li>
+                              <li><a href="#">услуга </a></li>
+                            </ul>
+                    </li>
+                  </ul>
+          </nav>
+          <ul class="loginform">
+            <li> 
+            </li>
+            <li> 
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main> </main>
+      <div class="index-main">
+        <p class="slogan">Лучшие номера для вашей работы, отдыха и просто вдохновения</p>
+        <div class="w380">
+          <section class="dialog">
+            <div class="dialog__header">
+              <h2 class="dialog__title">Найдём номера под ваши пожелания</h2>
+            </div>
+            <div class="dialog__content">
+              <form class="dialog__form" action="self" method="post">
+                <div class="mt20">
+                  <div class="date-dropdown"> 
+                    <div class="date-dropdown-item">
+                      <label class="data-dropdown-wrapper">
+                        <div class="date-dropdown__label">Прибытие</div>
+                        <div class="date-dropdown-input-wrapper">
+                          <input class="date-dropdown__input date" type="date">
+                        </div>
+                      </label>
+                      <div class="date-dropdown__datepicker"></div>
+                    </div>
+                    <div class="date-dropdown-item">
+                      <label class="data-dropdown-wrapper">
+                        <div class="date-dropdown__label">Выезд</div>
+                        <div class="date-dropdown-input-wrapper">
+                          <input class="date-dropdown__input date" type="date">
+                        </div>
+                      </label>
+                      <div class="date-dropdown__datepicker"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt20"></div>
+                <div class="form-group">
+                  <div class="form-group__wrapper">
+                    <div class="form-group__title">Гости</div>
+                  </div>
+                  <div class="form-group__body"></div>
+                </div>
+                <div class="mt5">
+                  <div class="input-dropdown">
+                    <div class="input-group">
+                      <input class="input-group__input" id="" name="dropdown" placeholder="Сколько гостей " type="text">
+                    </div>
+                    <div class="input-dropdown__options">
+                      <ul class="input-dropdown__controls">
+                        <li class="input-dropdown__item">Взрослые
+                          <div class="wrp">
+                            <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                            <button type="button" data-action="addGuest">+</button>
+                          </div>
+                        </li>
+                        <li class="input-dropdown__item">Дети
+                          <div class="wrp">
+                            <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                            <button type="button" data-action="addGuest">+</button>
+                          </div>
+                        </li>
+                        <li class="input-dropdown__item">Младенцы
+                          <div class="wrp">
+                            <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                            <button type="button" data-action="addGuest">+</button>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt33">
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+      <footer class="footer"> 
+        <div class="footer-row">
+          <div class="footer_grid">
+            <div class="footer__about"> 
+<div class="header-logo"><img src="./img/logo.png" alt="Название компании"><img src="./img/logo_text.png" alt="Название компании"></div>
+              <div class="footer_slogan"> 
+                <p>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</p>
+              </div>
+            </div>
+            <div class="footer__nav1">
+              <div class="mt5">
+                      <div class="form-group">
+                        <div class="form-group__wrapper">
+                          <div class="form-group__title">Навигация</div>
+                        </div>
+                        <div class="form-group__body"></div>
+                      </div>
+              </div>
+            </div>
+            <div class="footer__nav2">
+              <div class="mt5">
+                      <div class="form-group">
+                        <div class="form-group__wrapper">
+                          <div class="form-group__title">О нас</div>
+                        </div>
+                        <div class="form-group__body"></div>
+                      </div>
+              </div>
+            </div>
+            <div class="footer__nav3"> 
+              <div class="mt5">
+                      <div class="form-group">
+                        <div class="form-group__wrapper">
+                          <div class="form-group__title">Служба поддержки</div>
+                        </div>
+                        <div class="form-group__body"></div>
+                      </div>
+              </div>
+            </div>
+            <div class="footer__nav4">
+              <div class="mt5">
+                      <div class="form-group">
+                        <div class="form-group__wrapper">
+                          <div class="form-group__title">Подписка</div>
+                        </div>
+                        <div class="form-group__body"></div>
+                      </div>
+                <div class="txt mt16">
+                  <p>Получайте специальные предложения и новости сервиса</p>
+                </div>
+              </div>
+              <div class="mt24">
+                      <div class="input-group">
+                        <input class="input-group__input" name="none" placeholder="Email" type="email">
+                      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__copyright">Copyright &#169 2018 Toxin отель. Все права защищены.</div>
+          <div class="footer__share-btns"> <img src="./img/tweet-btn.png" alt="Мы в Twitter"><img src="./img/facebook-btn.png" alt="Мы в Facebook"><img src="./img/instagram-btn.png" alt="Мы в Instagramm"></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
