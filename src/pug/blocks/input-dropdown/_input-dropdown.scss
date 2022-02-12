@@ -1,4 +1,5 @@
-.input-dropdown{
+.input-dropdown {
+
    input {
       background-image: url(../img/expand_more.png);
       background-repeat: no-repeat;
@@ -13,8 +14,8 @@
    &__options {
       display: none;
       border-radius: 0px 0px 4px 4px;
-      border: 1px solid rgba(31, 32, 65, 0.5);
-      margin-top: -1px;
+      border: 1px solid $color-50;
+      margin-top: -1px; 
    }
 
    &__controls {
@@ -24,7 +25,6 @@
       padding: 0px;
       margin-bottom: 8px;
       margin-top: -3px;
-
    }
 
    &__item{
@@ -36,10 +36,9 @@
       font-weight: bold;
       align-items: center;
       text-transform: uppercase;
-
-
+      
       span {
-         margin: 10px;
+         margin: 10px; 
       }
 
       button {
@@ -47,27 +46,37 @@
          width: 30px;
          background: #FFF;
          border-radius: 15px;
-         border: 1px solid rgba(31, 32, 65, 0.5);
-         color: 1px solid rgba(31, 32, 65, 0.5);
+         border: 1px solid $color-50;
+         color: 1px solid $color-50;
          cursor: pointer;
          box-sizing: border-box;
       }
-      
+
    }
 
    &__buttons {
       display: flex;
       justify-content: space-between;
       padding: 0px 5px 0px 10px;
-
    }
-
 }
 
-.expanded{
-   display: block;
-   z-index: 100000;
-   background: #FFF;}
+.input-dropdown--expanded {
+   input {
+      cursor: pointer;
+      border-radius: 4px 4px 0px 0px;
+      border-color: $color-50;
+      }
+
+   .input-dropdown__options {
+      display: block;
+      z-index: 100000;
+      background: #FFF;
+   }
+}
+
+
+
 
 
 

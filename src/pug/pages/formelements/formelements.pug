@@ -13,144 +13,141 @@ include ../../blocks/range-slider/range-slider
 include ../../blocks/pagination/pagination
 include ../../blocks/bullet-list/bullet-list
 include ../../blocks/pluses/pluses
-include ../../blocks/comment/comment
+include ../../blocks/comment/comment 
 
-  block variables
-  -
-    let title = "Form & Elements";
-    let items = [{title: "Взрослые", count: 2}, {title: "Дети", count: 0}, {title:"Младенцы", count: 4}];
-    let items1 = [{title: "Спальни", count: 2}, {title: "Кровати", count: 0}, {title:"Ванные комнаты", count: 4}];
+block head
+	-	let title = "Form & Elements";
+
+	block variables
+		- let items = [{title: "Взрослые", count: 2}, {title: "Дети", count: 0}, {title:"Младенцы", count: 4}];
+		- let items1 = [{title: "Спальни", count: 2}, {title: "Кровати", count: 0}, {title:"Ванные комнаты", count: 4}];
 
 block content
-  .formelements-container
-    .col-3x.mr126 
-      .row
-        +form-group({title: "Text Field", note: "default"})
-        .mt5
-          +input({name: 'none', type: 'email', placeholder: "Email"})
-      .mt20
-        +form-group({title: "Text Field", note: "hover / focus"})
-          +input({mclass: "input-group__input__hover mt6", name: 'hover', type: 'text', placeholder: "This is pretty awesome"})
-      .mt20
-        +form-group({title: "Dropdown", note: ""})
-        .mt5
-          +input-dropdown({name: 'drop1', type: 'text', placeholder: "Сколько гостей ", items: items, buttons: true, id: "block1" })
-      .mt22
-        +form-group({title: "Masked Text Field", note: ""})
-        .mt5
-          +input({mclass: "", name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
-      .mt40
-        +form-group({title: "", note: ""})
-          +date-dropdown( [{label:'date dropdown', placeholder: "ДД.ММ.ГГГГ"}, 
-          {label:'date dropdown', placeholder: "19.08.2019"}])
-      .mt41
-        +form-group({title: "filter date dropdown", note: ""})
-          .w286 
-            +date-dropdown([{label:"", placeholder: "19 авг - 23 авг"}])
-      .mt41
-        +form-group({title: "Subscription Text field", note: ""})
-          .w266 
-            +input({mclass: 'mt5', placeholder: "Email", icon: ""})
-    .col-3x.mr74
-      .row
-        +form-group({title: "checkbox buttons", note: ""})
-          .w230.mt5
-            +checkbox({type: "checkbox" }, [{label: "Можно курить", checked: true }, {label: "Можно с питомцами", checked: true}, {label: "Можно пригласить гостей (до 10 человек)"} ])
-      .mt42
-        +form-group({title: "radio buttons", note: ""})
-        .mt16.row-inline
-          +radiobuttons({ type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }]).inline
-          +radiobuttons({ type: "radio", name: "radio" }, [{label: "Женщина"} ]).inline
-      .mt38
-        +form-group({title: "toggle", note: ""})
-        .mt14
-          +toggle({label: "Получать спецпредложения", checked: false })
-        .mt8
-          +toggle({label: "Получать спецпредложения", checked: true })
-      .mt42
-        +form-group({title: "like button", note: ""})
-        .mt14
-          +like-buttons({type: "button" }, [{label: "", count: 2, class: "" }, {label: "", count: 12, class: "active"} ])
-      .mt40
-        +form-group({title: "rate button", note: ""})
-        .mt14
-          +rate-button([{rate: 4},{rate: 5}])
-    .col-3x
-      .mt0
-        .w266
-          +range-slider({title: "range slider", note: "", unit: "₽", from: 5000, to: 10000, max: 15000, description: ""})
-      .mt38
-        +form-group({title: "buttons", note: ""})
-          .mt16
-            +button({name: "CLICK ME"}).withbg
-            +button({name: "CLICK ME"}).withbg__hover
-          .mt30
-            +button({name: "CLICK ME"}).withborder
-            +button({name: "CLICK ME"}).withborder__hover
-          .mt16
-            +button({name: "CLICK ME"}).withoutbg
-            +button({name: "CLICK ME"}).withoutbg__hover
-          .mt16
-            +button({name: "Перейти к оплате"}).withbordericon
-      .mt40
-        +form-group({title: "pagination", note: ""})
-          .mt16
-            +pagination({pagemax: 15, count: 180, countOnPage: 12, currentPage: 1, description: "1 - 12 из 100+ вариантов аренды"})
+	.formelements-container
+		.col-3x.mr126 
+			.row
+				+form-group({note: "default", title: "Text Field", type: ""})
+				.mt5
+					+input({class: "", id: "", name:"none", placeholder:"Email", type:"email"})
+			.row.mt20
+				+form-group({title: "Text Field", note: "hover / focus"})
+				.mt5
+					+input({class: "input-group__input--hover", name: "hover", placeholder: "This is pretty awesome", type: "text"})
+			.mt20
+				+form-group({title: "Dropdown", note: ""})
+				.mt5
+					+input-dropdown({name: "", type: "text", placeholder: "Сколько гостей ", items: items, buttons: true, id: "" })
+			.mt22
+				+form-group({title: "Masked Text Field", note: ""})
+				.mt5
+					+input({mclass: "", name: "", type: "text", placeholder: "ДД.ММ.ГГГГ"})
+			.mt40
+				+form-group({title: "", note: ""})
+				+date-dropdown( [{label:'date dropdown', placeholder: "ДД.ММ.ГГГГ"}, {label:'date dropdown', placeholder: "19.08.2019"}] )
+			.mt41
+				+form-group({title: "filter date dropdown", note: ""})
+				.w286 
+					+date-dropdown([{label:"", placeholder: "19 авг - 23 авг"}])
+			.mt41
+				+form-group({title: "Subscription Text field", note: ""})
+				.mt5.w266
+					+input({mclass: 'mt5', placeholder: "Email", icon: ""})
+		.col-3x.mr74
+			.row
+				+form-group({title: "checkbox buttons", note: ""})
+				.w230.mt5
+					+checkbox({type: "checkbox" }, [{label: "Можно курить", checked: true }, {label: "Можно с питомцами", checked: true}, {label: "Можно пригласить гостей (до 10 человек)"} ])
+			.mt42
+				+form-group({title: "radio buttons", note: ""})
+				.mt16.row-inline
+					+radiobuttons({ type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }]).inline
+					+radiobuttons({ type: "radio", name: "radio" }, [{label: "Женщина"} ]).inline
+			.mt38
+				+form-group({title: "toggle", note: ""})
+				.mt14
+					+toggle({label: "Получать спецпредложения", checked: false })
+				.mt8
+					+toggle({label: "Получать спецпредложения", checked: true })
+			.mt42
+				+form-group({title: "like button", note: ""})
+				.mt14
+					+like-buttons({type: "button" }, [{label: "", count: 2, class: "" }, {label: "", count: 12, class: "active"} ])
+			.mt40
+				+form-group({title: "rate button", note: ""})
+				.mt14
+					+rate-button([{rate: 4},{rate: 5}])
+		.col-3x
+			.mt0
+				.w266
+					+range-slider({title: "range slider", note: "", unit: "₽", from: 5000, to: 10000, max: 15000, description: ""})
+			.mt40
+			+form-group({title: "buttons", note: ""})
+			.mt16
+				+button({name: "CLICK ME", class: "withbg", size: "w99h44", hovered: false})
+				+button({name: "CLICK ME", class: "withbg", size: "w99h44", hovered: true })
+			.mt30
+				+button({name: "CLICK ME", class: "withborder", size: "w99h44", hovered: false})
+				+button({name: "CLICK ME", class: "withborder", size: "w99h44", hovered: true})
+			.mt29
+				+button({name: "CLICK ME", class: "simple"})
+				+button({name: "CLICK ME", class: "simple"})
+			.mt27
+				+button({name: "Перейти к оплате", class: "withbg", size: "w320h44",})
+			.mt40
+				+form-group({title: "pagination", note: ""})
+				.mt16
+				+pagination({pagemax: 15, count: 180, countOnPage: 12, currentPage: 1, description: "1 - 12 из 100+ вариантов аренды"})
 
-    .col-3x.mr126
-      .w266
-        +form-group({title: "Dropdown", note: "default"})
-          .mt5
-            +input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown2', type: 'text',
-                           placeholder: "2 спальни, 2 кровати", items: items1 , buttons: false, id:"block2" })
-      .mt20
-        .w266
-          +form-group({title: "Dropdown", note: "expanded"})
-            .mt5
-              +input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown3', type: 'text',
-                            placeholder: "2 спальни, 2 кровати", items: items1, inline: true, id:"block3" })
-    .col-3x.mr74
-        +form-group({title: "Dropdown", note: ""})
-          .mt5
-            +input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown4', type: 'text',
-                             placeholder: "Сколько гостей ", items: items, inline: true, id:"block4", buttons: true  })
-    .col-3x
-        +form-group({title: "Dropdown", note: ""})
-          .mt5
-            +input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown-group__input", 
-            name: 'dropdown5', type: 'text',
-            placeholder: "Сколько гостей ", items: items , inline: true, id:"block5", buttons: true })
+		.col-3x.mr126
+			.w266
+				+form-group({title: "Dropdown", note: "default"})
+				.mt5
+					+input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown2', type: 'text',
+                       placeholder: "2 спальни, 2 кровати", items: items1 , buttons: false, id:"block2" })
+			.mt20.w266
+				+form-group({title: "Dropdown", note: "expanded"})
+				.mt5
+					+input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown3', type: 'text',
+                        placeholder: "2 спальни, 2 кровати", items: items1, inline: true, id:"block3" })
+		.col-3x.mr74
+			+form-group({title: "Dropdown", note: ""})
+			.mt5
+				+input-dropdown({mclass: "input-dropdown-group__input", name: 'dropdown4', type: 'text',
+		             placeholder: "Сколько гостей ", items: items, inline: true, id:"block4", buttons: true  })
+		.col-3x
+			+form-group({title: "Dropdown", note: ""})
+			.mt5
+				+input-dropdown({label: "Dropdown", note: "", mclass: "input-dropdown-group__input", 
+					name: 'dropdown5', type: 'text',
+					placeholder: "Сколько гостей ", items: items , inline: true, id:"block5", buttons: true })
 
 
-    .col-3x.mr126.mt-40
-      .w266
-        .mt-1
-       
-          +form-group({title: "expandable checkbox list", note: "", accordion: true})
-            +checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},
-            {label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
-        .mt48
-          +form-group({title: "expandable checkbox list", note: "", accordion: true, inline: true})
-            +checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},
-            {label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
+		.col-3x.mr126.mt-40
+			.w266
+				+form-group({title: "expandable checkbox list", note: ""})
+				//- +checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},
+				//- 	{label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
+			.mt48
+				+form-group({title: "expandable checkbox list", note: "", inline: true})
+				+checkbox({type: "checkbox" }, [{label: "завтрак", checked: false }, {label: "Письменный стол", checked: true}, {label: "стул для кормления", checked: true},
+					{label: "кроватка", checked: true},{label: "телевизор", checked: false},{label: "шампунь", checked: false}])
 
-    .col-3x.mr74.mt-40
-      .w260
-        .mt-1
-          +form-group({title: "rich checkbox buttons", note: ""})
-            +checkbox({type: "checkbox" }, [{label: "Широкий корридор", checked: false, note: "Ширина коридоров в номере не менее 91 см." }, {label: "Помошник для инвалидов", checked: false, note: "На 1 этаже вас встретит специалист  и проводит до номера."}])
-    .col-3x.mt-40
-      .w260
-        .mt-1
-          +form-group({title: "bullet list", note: ""}) 
-            +bullet-list([{rule: "Нельзя с питомцами"}, {rule: "Без вечеринок и мероприятий"}, {rule: "Время прибытия — после 13:00, а выезд до 12:00"}])
-          
+		.col-3x.mr74.mt-40
+			.w260
+				.mt-1
+					+form-group({title: "rich checkbox buttons", note: ""})
+					+checkbox({type: "checkbox" }, [{label: "Широкий корридор", checked: false, note: "Ширина коридоров в номере не менее 91 см." }, {label: "Помошник для инвалидов", checked: false, note: "На 1 этаже вас встретит специалист  и проводит до номера."}])
+		
+		.col-3x.mt-40
+			.w260
+			.mt-1
+				+form-group({title: "bullet list", note: ""}) 
+				+bullet-list([{rule: "Нельзя с питомцами"}, {rule: "Без вечеринок и мероприятий"}, {rule: "Время прибытия — после 13:00, а выезд до 12:00"}])
+		.col-3x.mr126.mt-10
+				+pluses([{icon: "./img/insert_emoticon.png", title:"Комфорт", text:"Шумопоглощающие стены"}, {icon: "./img/location_city.png", title:"Удобство", text:"окно в каждой из спален"}])        
 
-    .col-3x.mr126.mt-10
-      +pluses([{icon: "./img/insert_emoticon.png", title:"Комфорт", text:"Шумопоглощающие стены"}, {icon: "./img/location_city.png", title:"Удобство", text:"окно в каждой из спален"}])        
-
-    .col-3x-2x
-      +comment({author: "Мурад Сарафанов",
-                timeAgo: "5 дней назад",
-                text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
-                )     
+		.col-3x-2x
+				+comment({author: "Мурад Сарафанов",
+				timeAgo: "5 дней назад",
+				text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
+				)     

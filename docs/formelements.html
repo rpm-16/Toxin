@@ -1,25 +1,649 @@
-Html Webpack Plugin:
-<pre>
-  TypeError: Cannot read properties of undefined (reading 'length')
-  
-  - formelements.pug:91 Object.eval
-    [.]/[html-webpack-plugin]/lib/loader.js!./src/pug/pages/formelements/formelements.pug:91:32
-  
-  - formelements.pug:128 Object.pug_interp [as input-dropdown]
-    [.]/[html-webpack-plugin]/lib/loader.js!./src/pug/pages/formelements/formelements.pug:128:4
-  
-  - formelements.pug:704 eval
-    [.]/[html-webpack-plugin]/lib/loader.js!./src/pug/pages/formelements/formelements.pug:704:29
-  
-  - formelements.pug:1031 template
-    [.]/[html-webpack-plugin]/lib/loader.js!./src/pug/pages/formelements/formelements.pug:1031:7
-  
-  - index.js:450 
-    [Toxin]/[html-webpack-plugin]/index.js:450:16
-  
-  - task_queues:96 processTicksAndRejections
-    node:internal/process/task_queues:96:5
-  
-  - async Promise.all
-  
-</pre>
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
+    <title>Form &amp; Elements</title>
+  <script defer src="js/mainindex.js"></script><link href="./css/main.css" rel="stylesheet"></head>
+  <body> 
+    <div class="wrapper">
+<header></header>
+      <div class="formelements-container">
+        <div class="col-3x mr126"> 
+          <div class="row">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Text Field</div>
+                <div class="form-group__note">default</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="input-group">
+                <input class="input-group__input" id="" name="none" placeholder="Email" type="email">
+              </div>
+            </div>
+          </div>
+          <div class="row mt20">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Text Field</div>
+                <div class="form-group__note">hover / focus</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="input-group">
+                <input class="input-group__input input-group__input--hover" name="hover" placeholder="This is pretty awesome" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="mt20">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Dropdown</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="input-dropdown">
+                <div class="input-group">
+                  <input class="input-group__input" id="" name="" placeholder="Сколько гостей " type="text">
+                </div>
+                <div class="input-dropdown__options">
+                  <ul class="input-dropdown__controls">
+                    <li class="input-dropdown__item">Взрослые
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Дети
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Младенцы
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="input-dropdown__buttons"> 
+                    <button class="undefined--undefined withoutbg" type="button" data-action="clear"><span>Очистить</span></button>
+                    <button class="undefined--undefined withoutbg" type="button" data-action="submit"><span>Применить</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt22">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Masked Text Field</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="input-group">
+                <input class="input-group__input" name="" placeholder="ДД.ММ.ГГГГ" type="text">
+              </div>
+            </div>
+          </div>
+          <div class="mt40">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title"></div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="date-dropdown"> 
+              <div class="date-dropdown-item">
+                <label class="data-dropdown-wrapper">
+                  <div class="date-dropdown__label">date dropdown</div>
+                  <div class="date-dropdown-input-wrapper">
+                    <input class="date-dropdown__input date" type="date">
+                  </div>
+                </label>
+                <div class="date-dropdown__datepicker"></div>
+              </div>
+              <div class="date-dropdown-item">
+                <label class="data-dropdown-wrapper">
+                  <div class="date-dropdown__label">date dropdown</div>
+                  <div class="date-dropdown-input-wrapper">
+                    <input class="date-dropdown__input date" type="date">
+                  </div>
+                </label>
+                <div class="date-dropdown__datepicker"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mt41">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">filter date dropdown</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="w286"> 
+              <div class="date-dropdown"> 
+                <div class="date-dropdown-item">
+                  <label class="data-dropdown-wrapper">
+                    <div class="date-dropdown__label"></div>
+                    <div class="date-dropdown-input-wrapper">
+                      <input class="date-dropdown__input date" type="date">
+                    </div>
+                  </label>
+                  <div class="date-dropdown__datepicker"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt41">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Subscription Text field</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5 w266">
+              <div class="input-group">
+                <input class="input-group__input" placeholder="Email">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x mr74">
+          <div class="row">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">checkbox buttons</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="w230 mt5">
+              <div class="checkbox-group">
+                <ul class="checkbox-group__list">
+                  <li class="checkbox__list__item">
+                    <div class="checkbox__list__input">
+                      <input type="checkbox" checked>
+                    </div>
+                    <div class="checkbox__list__label">Можно курить
+                    </div>
+                  </li>
+                  <li class="checkbox__list__item">
+                    <div class="checkbox__list__input">
+                      <input type="checkbox" checked>
+                    </div>
+                    <div class="checkbox__list__label">Можно с питомцами
+                    </div>
+                  </li>
+                  <li class="checkbox__list__item">
+                    <div class="checkbox__list__input">
+                      <input type="checkbox">
+                    </div>
+                    <div class="checkbox__list__label">Можно пригласить гостей (до 10 человек)
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mt42">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">radio buttons</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt16 row-inline">
+              <div class="radiobutton">
+                <ul class="radiobutton__list">
+                  <li class="radiobutton__item">
+                    <input type="radio" name="radio" checked>
+                    <div class="radiobutton__label">Мужчина</div>
+                  </li>
+                </ul>
+              </div>
+              <div class="radiobutton">
+                <ul class="radiobutton__list">
+                  <li class="radiobutton__item">
+                    <input type="radio" name="radio">
+                    <div class="radiobutton__label">Женщина</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mt38">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">toggle</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt14">
+              <div class="toggle">
+                <ul class="toggle__list">
+                  <li class="toggle__item">
+                    <input class="toggle__input" type="checkbox">
+                    <div class="toggle__label">Получать спецпредложения</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="mt8">
+              <div class="toggle">
+                <ul class="toggle__list">
+                  <li class="toggle__item">
+                    <input class="toggle__input" type="checkbox" checked>
+                    <div class="toggle__label">Получать спецпредложения</div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mt42">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">like button</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt14">
+              <div class="like-button">
+                <button class="like-button__button" type="button"><span>2</span></button>
+                <button class="active like-button__button" type="button"><span>12</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="mt40">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">rate button</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt14">
+              <div class="rate-button-wrapper">
+                <button class="rate-button__button"><span class="rate-button__icon rate"></span><span class="rate-button__icon rate"></span><span class="rate-button__icon rate"></span><span class="rate-button__icon rate"></span><span class="rate-button__icon  "></span>
+                </button>
+                <button class="rate-button__button"><span class="rate-button__icon rate"></span><span class="rate-button__icon rate"></span><span class="rate-button__icon rate"></span><span class="rate-button__icon rate"></span><span class="rate-button__icon rate"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x">
+          <div class="mt0">
+            <div class="w266">
+              <div class="form-group">
+                <label class="form-group_wrapper">
+                  <div class="form-group__title">range slider</div>
+                </label>
+                <div class="range-slider"> 
+                  <input class="range-slider__input" type="text" name="cost" value="" data-min="0" data-max="15000" data-from="5000" data-to="10000" data-unit="₽">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt40"></div>
+          <div class="form-group">
+            <div class="form-group__wrapper">
+              <div class="form-group__title">buttons</div>
+            </div>
+            <div class="form-group__body"></div>
+          </div>
+          <div class="mt16">
+            <button class="withbg withbg--w99h44" type="button"><span>CLICK ME</span></button>
+            <button class="withbg withbg--w99h44" type="button"><span>CLICK ME</span></button>
+          </div>
+          <div class="mt30">
+            <button class="withborder withborder--w99h44" type="button"><span>CLICK ME</span></button>
+            <button class="withborder withborder--w99h44" type="button"><span>CLICK ME</span></button>
+          </div>
+          <div class="mt29">
+            <button class="simple simple--undefined" type="button"><span>CLICK ME</span></button>
+            <button class="simple simple--undefined" type="button"><span>CLICK ME</span></button>
+          </div>
+          <div class="mt27">
+            <button class="withbg withbg--w320h44" type="button"><span>Перейти к оплате</span></button>
+          </div>
+          <div class="mt40">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">pagination</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt16"></div>
+            <div class="pagination-group">
+              <ul class="pagination-group__list"> 
+                <li class="pagination-group__item current"><a class="pagination-group__link">1</a></li>
+                <li class="pagination-group__item"><a class="pagination-group__link">2</a></li>
+                <li class="pagination-group__item"><a class="pagination-group__link">3</a></li>
+                <li class="pagination-group__item"><a class="pagination-group__link">...</a></li>
+                <li class="pagination-group__item"><a class="pagination-group__link">15</a></li>
+                <li class="pagination-group__item nextPage"><a class="pagination-group__link"><i class="arrowforward"></i></a></li>
+              </ul>
+              <div class="pagination-description">1 - 12 из 100+ вариантов аренды</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x mr126">
+          <div class="w266">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Dropdown</div>
+                <div class="form-group__note">default</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="input-dropdown">
+                <div class="input-group">
+                  <input class="input-group__input" id="block2" name="dropdown2" placeholder="2 спальни, 2 кровати" type="text">
+                </div>
+                <div class="input-dropdown__options">
+                  <ul class="input-dropdown__controls">
+                    <li class="input-dropdown__item">Спальни
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Кровати
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Ванные комнаты
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt20 w266">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Dropdown</div>
+                <div class="form-group__note">expanded</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="input-dropdown">
+                <div class="input-group">
+                  <input class="input-group__input" id="block3" name="dropdown3" placeholder="2 спальни, 2 кровати" type="text">
+                </div>
+                <div class="input-dropdown__options">
+                  <ul class="input-dropdown__controls">
+                    <li class="input-dropdown__item">Спальни
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Кровати
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Ванные комнаты
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x mr74">
+          <div class="form-group">
+            <div class="form-group__wrapper">
+              <div class="form-group__title">Dropdown</div>
+            </div>
+            <div class="form-group__body"></div>
+          </div>
+          <div class="mt5">
+            <div class="input-dropdown">
+              <div class="input-group">
+                <input class="input-group__input" id="block4" name="dropdown4" placeholder="Сколько гостей " type="text">
+              </div>
+              <div class="input-dropdown__options">
+                <ul class="input-dropdown__controls">
+                  <li class="input-dropdown__item">Взрослые
+                    <div class="wrp">
+                      <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                      <button type="button" data-action="addGuest">+</button>
+                    </div>
+                  </li>
+                  <li class="input-dropdown__item">Дети
+                    <div class="wrp">
+                      <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                      <button type="button" data-action="addGuest">+</button>
+                    </div>
+                  </li>
+                  <li class="input-dropdown__item">Младенцы
+                    <div class="wrp">
+                      <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                      <button type="button" data-action="addGuest">+</button>
+                    </div>
+                  </li>
+                </ul>
+                <div class="input-dropdown__buttons"> 
+                  <button class="undefined--undefined withoutbg" type="button" data-action="clear"><span>Очистить</span></button>
+                  <button class="undefined--undefined withoutbg" type="button" data-action="submit"><span>Применить</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x">
+          <div class="form-group">
+            <div class="form-group__wrapper">
+              <div class="form-group__title">Dropdown</div>
+            </div>
+            <div class="form-group__body"></div>
+          </div>
+          <div class="mt5">
+            <div class="input-dropdown">
+              <div class="input-group">
+                <input class="input-group__input" id="block5" name="dropdown5" placeholder="Сколько гостей " type="text">
+              </div>
+              <div class="input-dropdown__options">
+                <ul class="input-dropdown__controls">
+                  <li class="input-dropdown__item">Взрослые
+                    <div class="wrp">
+                      <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                      <button type="button" data-action="addGuest">+</button>
+                    </div>
+                  </li>
+                  <li class="input-dropdown__item">Дети
+                    <div class="wrp">
+                      <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                      <button type="button" data-action="addGuest">+</button>
+                    </div>
+                  </li>
+                  <li class="input-dropdown__item">Младенцы
+                    <div class="wrp">
+                      <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                      <button type="button" data-action="addGuest">+</button>
+                    </div>
+                  </li>
+                </ul>
+                <div class="input-dropdown__buttons"> 
+                  <button class="undefined--undefined withoutbg" type="button" data-action="clear"><span>Очистить</span></button>
+                  <button class="undefined--undefined withoutbg" type="button" data-action="submit"><span>Применить</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x mr126 mt-40">
+          <div class="w266">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">expandable checkbox list</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+          </div>
+          <div class="mt48">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">expandable checkbox list</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="checkbox-group">
+              <ul class="checkbox-group__list">
+                <li class="checkbox__list__item">
+                  <div class="checkbox__list__input">
+                    <input type="checkbox">
+                  </div>
+                  <div class="checkbox__list__label">завтрак
+                  </div>
+                </li>
+                <li class="checkbox__list__item">
+                  <div class="checkbox__list__input">
+                    <input type="checkbox" checked>
+                  </div>
+                  <div class="checkbox__list__label">Письменный стол
+                  </div>
+                </li>
+                <li class="checkbox__list__item">
+                  <div class="checkbox__list__input">
+                    <input type="checkbox" checked>
+                  </div>
+                  <div class="checkbox__list__label">стул для кормления
+                  </div>
+                </li>
+                <li class="checkbox__list__item">
+                  <div class="checkbox__list__input">
+                    <input type="checkbox" checked>
+                  </div>
+                  <div class="checkbox__list__label">кроватка
+                  </div>
+                </li>
+                <li class="checkbox__list__item">
+                  <div class="checkbox__list__input">
+                    <input type="checkbox">
+                  </div>
+                  <div class="checkbox__list__label">телевизор
+                  </div>
+                </li>
+                <li class="checkbox__list__item">
+                  <div class="checkbox__list__input">
+                    <input type="checkbox">
+                  </div>
+                  <div class="checkbox__list__label">шампунь
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x mr74 mt-40">
+          <div class="w260">
+            <div class="mt-1">
+              <div class="form-group">
+                <div class="form-group__wrapper">
+                  <div class="form-group__title">rich checkbox buttons</div>
+                </div>
+                <div class="form-group__body"></div>
+              </div>
+              <div class="checkbox-group">
+                <ul class="checkbox-group__list">
+                  <li class="checkbox__list__item">
+                    <div class="checkbox__list__input">
+                      <input type="checkbox">
+                    </div>
+                    <div class="checkbox__list__label">Широкий корридор
+                      <div class="checkbox-group__note">Ширина коридоров в номере не менее 91 см.</div>
+                    </div>
+                  </li>
+                  <li class="checkbox__list__item">
+                    <div class="checkbox__list__input">
+                      <input type="checkbox">
+                    </div>
+                    <div class="checkbox__list__label">Помошник для инвалидов
+                      <div class="checkbox-group__note">На 1 этаже вас встретит специалист  и проводит до номера.</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x mt-40">
+          <div class="w260"></div>
+          <div class="mt-1">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">bullet list</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="rule-group">
+              <ul class="rule-group__list"></ul>
+              <li class="rule-group__line">Нельзя с питомцами</li>
+              <li class="rule-group__line">Без вечеринок и мероприятий</li>
+              <li class="rule-group__line">Время прибытия — после 13:00, а выезд до 12:00</li>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x mr126 mt-10">
+          <div class="pluses-group">
+            <div class="pluses-group__item"> 
+              <div class="pluses-group__icon"><img src="./img/insert_emoticon.png"></div>
+              <div class="pluses-group__title">Комфорт
+                <div class="pluses-group__text">Шумопоглощающие стены</div>
+              </div>
+            </div>
+            <div class="pluses-group__item"> 
+              <div class="pluses-group__icon"><img src="./img/location_city.png"></div>
+              <div class="pluses-group__title">Удобство
+                <div class="pluses-group__text">окно в каждой из спален</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3x-2x">
+          <div class="comment">
+            <div class="comment__column">
+              <div class="comment__avatar"></div>
+              <div class="comment__button">
+                <div class="mt8">
+                  <div class="like-button">
+                    <button class="like-button__button" type="button"><span>2</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment__column"> 
+              <div class="comment__author">Мурад Сарафанов</div>
+              <div class="comment__timeAgo">5 дней назад</div>
+              <div class="comment__text">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

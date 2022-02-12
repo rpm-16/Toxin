@@ -3,9 +3,9 @@ include ../buttons/buttons
 mixin input-dropdown(args)
   - let objArgs = args;
    
-  .input-dropdown.js-input-dropdown
+  .input-dropdown
     +input(args)(readonly= "readonly")
-    .input-dropdown__options(class=objArgs.inline? "expanded": "", tabindex)
+    .input-dropdown__options
       ul.input-dropdown__controls
         for item in objArgs.items
           li.input-dropdown__item= item.title
@@ -18,5 +18,3 @@ mixin input-dropdown(args)
         .input-dropdown__buttons 
           +button({name: "Очистить"})(data-action="clear").withoutbg
           +button({name: "Применить"})(data-action="submit").withoutbg
-
-           

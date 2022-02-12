@@ -1,18 +1,19 @@
-const dropdowns = document.querySelectorAll('.input-dropdown');
-dropdowns.forEach((dropdown) => initOptions(dropdown));
+const drops = document.querySelectorAll('.input-dropdown');
+drops.forEach((drop) => initOptions(drop));
 
-function initOptions(element) {
-  element.querySelector('input').addEventListener('click', showDropdown);  
+function initOptions(drop) {
+  drop.addEventListener('click', showDrop);  
 
-  function showDropdown(e) {
+  function showDrop(e) {
+    //must add some solution to close another drops when new drop opens 11.02.2022
+    e.target.closest('.input-dropdown').classList.add('input-dropdown--expanded');
     e.stopPropagation();
-    e.target.closest('.input-dropdown').querySelector('.input-dropdown__options').classList.add('expanded');
-    document.addEventListener('click', hideDropdown)
+    document.addEventListener('click', hideDrop);
   }
 
-  function hideDropdown(e) {
-    if (!element.contains(e.target)){
-      element.querySelector('.input-dropdown__options').classList.remove('expanded'); 
-    } 
+  function hideDrop() {
+    drop.classList.remove('input-dropdown--expanded'); 
+    document.removeEventListener('click', hideDrop);
   }
+
 }

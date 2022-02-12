@@ -1,150 +1,187 @@
 .withbg { 
     cursor: pointer;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    border-radius: 22px;
-    width: 100px;
     border: none;
-    /* identical to box height */
     text-transform: uppercase;
-    height: 44px;
+    border-radius: 22px; 
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    color: #FFF;
-    padding: 0px 20px;
-    &:hover {
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    box-sizing: border-box;
+    outline: none;
+        span {
+            color: #FFF;
+            font-size: 12px;
+            line-height: 15px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+       }
+
+    &:hover, &--hover {
         opacity: 0.5;
+    }
+
+    &--w99h44{
+        height: 44px;
+        width: 99px;
+    }
+    &--w320h44{
+        width: 320px;
+        height: 44px;
     }
 }
 
+// с бордюром без фона
 .withborder { 
     cursor: pointer;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    border-radius: 22px;
-    width: 100px;
-    /* identical to box height */
+    border: none;
     text-transform: uppercase;
-    height: 44px;
-    background: #FFF;
-    color: #BC9CFF;
-    border: 2px solid linear-gradient(180deg, #BC9CFF, #8BA4F9);
-    // border-image-source: linear-gradient(180deg, #BC9CFF, #8BA4F9);
-    border-radius: 22px;
+    border-radius: 22px; 
+    background: linear-gradient(180deg, $primary-color 0%, #8BA4F9 100%);
+    box-sizing: border-box;
     outline: none;
-    &:hover {
-        opacity: 0.5;
-        color: #BC9CFF;
-    }
-}
+        span {
+            display: block;
+            background: #fff;
+            font-size: 12px;
+            line-height: 15px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            color: $primary-color;
+       }
+    
 
-.withoutbg { 
-    cursor: pointer;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    /* identical to box height */
-    text-transform: uppercase;
-    height: 44px;
-    border: none;
-    color: #BC9CFF;
-    padding: 0px;
-    &:hover {
-        color: rgba(31, 32, 65, 0.5);
-    }
-}
-
-// кнопка с иконкой и фоном
-.withbordericon { 
-    cursor: pointer;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    border-radius: 22px;
-    width: 100%;
-    border: none;
-    /* identical to box height */
-    text-transform: uppercase;
-    height: 44px;
-    background: #FFF;
-    color: #BC9CFF;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    color: #FFF;
-    &:hover {
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    &:hover, &--hover {
         opacity: 0.5;
     }
-}
 
-//технические скрипты
-.withbg__hover { 
-    cursor: pointer;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    border-radius: 22px;
-    width: 100px;
+    &--w99h44{
+        width: 99px;
+        span {
+            height: 40px;
+            width: 100%;
+            text-align: center;
+            border-radius: 22px;
+        }
+    }
+}
+// без бордюра без фона
+
+.simple {
+    background-color: #fff;
     border: none;
-    /* identical to box height */
-    text-transform: uppercase;
-    height: 44px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.5;
-    color: #FFF;
-}
-
-.withborder__hover { 
-    cursor: pointer;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    border-radius: 22px;
-    width: 100px;
-    /* identical to box height */
-    text-transform: uppercase;
-    height: 44px;
-    background: #FFF;
-    color: #BC9CFF;
-    border: 2px solid linear-gradient(180deg, #BC9CFF, #8BA4F9);
-    opacity: 0.5;
-    border-radius: 22px;
-    outline: none;
-}
-
-.withoutbg__hover { 
-    cursor: pointer;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    height: 44px;
-    border: none;
-    color: rgba(31, 32, 65, 0.5);
     padding: 0px;
+    
+    cursor: pointer;
+    span {
+            background: #fff;
+            font-size: 12px;
+            line-height: 15px;
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            color: $primary-color;
+    }
+
+    &:hover {
+        background-color: #fff;
+        span{
+            color: rgba(31, 32, 65, 0.5);
+        
+        }
+    }
 }
 
-.h34 {
-    height: 34px;
-}
-.w196 {
-    width: 196px;
-}
-.w87 {
-    width: 87px;
-}
+// .withoutbg { 
+//     cursor: pointer;
+//     font-family: Montserrat;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 12px;
+//     line-height: 15px;
+//     /* identical to box height */
+//     text-transform: uppercase;
+//     height: 44px;
+//     border: none;
+//     color: #BC9CFF;
+//     padding: 0px;
+//     &:hover {
+//         color: rgba(31, 32, 65, 0.5);
+//     }
+// }
+
+// // кнопка с иконкой и фоном
+// .withbordericon { 
+//     cursor: pointer;
+//     font-family: Montserrat;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 12px;
+//     line-height: 15px;
+//     border-radius: 22px;
+//     width: 100%;
+//     border: none;
+//     /* identical to box height */
+//     text-transform: uppercase;
+//     height: 44px;
+//     background: #FFF;
+//     color: #BC9CFF;
+//     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+//     color: #FFF;
+//     &:hover {
+//         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+//         opacity: 0.5;
+//     }
+// }
+
+// //технические скрипты
+// .withbg__hover { 
+//     cursor: pointer;
+//     font-family: Montserrat;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 12px;
+//     line-height: 15px;
+//     border-radius: 22px;
+//     width: 100px;
+//     border: none;
+//     /* identical to box height */
+//     text-transform: uppercase;
+//     height: 44px;
+//     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+//     opacity: 0.5;
+//     color: #FFF;
+// }
+
+// .withborder__hover { 
+//     cursor: pointer;
+//     font-family: Montserrat;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 12px;
+//     line-height: 15px;
+//     border-radius: 22px;
+//     width: 100px;
+//     /* identical to box height */
+//     text-transform: uppercase;
+//     height: 44px;
+//     background: #FFF;
+//     color: #BC9CFF;
+//     border: 2px solid linear-gradient(180deg, #BC9CFF, #8BA4F9);
+//     opacity: 0.5;
+//     border-radius: 22px;
+//     outline: none;
+// }
+
+// .withoutbg__hover { 
+//     cursor: pointer;
+//     font-family: Montserrat;
+//     font-style: normal;
+//     font-weight: bold;
+//     font-size: 12px;
+//     line-height: 15px;
+//     text-transform: uppercase;
+//     height: 44px;
+//     border: none;
+//     color: rgba(31, 32, 65, 0.5);
+//     padding: 0px;
+// }

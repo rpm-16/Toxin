@@ -3,4 +3,7 @@ mixin button(args)
       - let objButton = args
         
     block content
-        button(type="button")&attributes(attributes)= objButton.name
+      if objButton.hovered 
+        //- -  objButton.class += " withbg--hover";
+      button(type="button")(class= objButton.class, class=objButton.class + "--" + objButton.size)&attributes(attributes)
+        span= objButton.name
