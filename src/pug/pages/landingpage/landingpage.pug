@@ -1,4 +1,5 @@
 extends ../../layouts/main/main
+
 include ../../blocks/dialog/dialog
 include ../../blocks/date-dropdown/date-dropdown
 include ../../blocks/input-dropdown/input-dropdown
@@ -7,24 +8,23 @@ include ../../blocks/buttons/buttons
 
 block head
 	- let title = "Landing Page";
-
-	block variables
-		- let items = [{title: "Взрослые", count: 2}, {title: "Дети", count: 0}, {title:"Младенцы", count: 4}];
+	- let items = [{title: "Взрослые", count: 2}, {title: "Дети", count: 0}, {title:"Младенцы", count: 4}];
 
 block content 
-	main 
-	.index-main
-		p.slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
-		.w380
-			+dialog({title: "Найдём номера под ваши пожелания"})
-				.mt20
+	main.index-main
+		.wrapper
+			.w380
+				+dialog({title: "Найдём номера под ваши пожелания"})
+					.mt20
 					+date-dropdown( [{label:'Прибытие', placeholder: "ДД.ММ.ГГГГ"}, {label:'Выезд', placeholder: "19.08.2019"}])
-				.mt20
-				+form-group({title: "Гости", note: ""})
-				.mt5
+					.mt20
+					+form-group({title: "Гости", note: ""})
+					.mt5
 					+input-dropdown({ name: 'dropdown', type: 'text', placeholder: "Сколько гостей ", items: items, showButtons: true, id: "" })
-				.mt33
-					+button({name: "Подобрать номер", class: "withbg", size: "w320h44"})
+					.mt33
+					+button({name: "Подобрать номер", class: "withbg", size: "w320h44", hovered: false})
+
+			p.slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
 
 
 

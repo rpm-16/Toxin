@@ -1,3 +1,4 @@
+.button {}
 .withbg { 
     cursor: pointer;
     border: none;
@@ -23,10 +24,12 @@
         height: 44px;
         width: 99px;
     }
+
     &--w320h44{
         width: 320px;
         height: 44px;
     }
+
     &--w196h34{
         width: 196px;
         height: 34px;
@@ -111,98 +114,3 @@
         }
     }
 }
-
-// .withoutbg { 
-//     cursor: pointer;
-//     font-family: Montserrat;
-//     font-style: normal;
-//     font-weight: bold;
-//     font-size: 12px;
-//     line-height: 15px;
-//     /* identical to box height */
-//     text-transform: uppercase;
-//     height: 44px;
-//     border: none;
-//     color: #BC9CFF;
-//     padding: 0px;
-//     &:hover {
-//         color: rgba(31, 32, 65, 0.5);
-//     }
-// }
-
-// // кнопка с иконкой и фоном
-// .withbordericon { 
-//     cursor: pointer;
-//     font-family: Montserrat;
-//     font-style: normal;
-//     font-weight: bold;
-//     font-size: 12px;
-//     line-height: 15px;
-//     border-radius: 22px;
-//     width: 100%;
-//     border: none;
-//     /* identical to box height */
-//     text-transform: uppercase;
-//     height: 44px;
-//     background: #FFF;
-//     color: #BC9CFF;
-//     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-//     color: #FFF;
-//     &:hover {
-//         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-//         opacity: 0.5;
-//     }
-// }
-
-// //технические скрипты
-// .withbg__hover { 
-//     cursor: pointer;
-//     font-family: Montserrat;
-//     font-style: normal;
-//     font-weight: bold;
-//     font-size: 12px;
-//     line-height: 15px;
-//     border-radius: 22px;
-//     width: 100px;
-//     border: none;
-//     /* identical to box height */
-//     text-transform: uppercase;
-//     height: 44px;
-//     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-//     opacity: 0.5;
-//     color: #FFF;
-// }
-
-// .withborder__hover { 
-//     cursor: pointer;
-//     font-family: Montserrat;
-//     font-style: normal;
-//     font-weight: bold;
-//     font-size: 12px;
-//     line-height: 15px;
-//     border-radius: 22px;
-//     width: 100px;
-//     /* identical to box height */
-//     text-transform: uppercase;
-//     height: 44px;
-//     background: #FFF;
-//     color: #BC9CFF;
-//     border: 2px solid linear-gradient(180deg, #BC9CFF, #8BA4F9);
-//     opacity: 0.5;
-//     border-radius: 22px;
-//     outline: none;
-// }
-
-// .withoutbg__hover { 
-//     cursor: pointer;
-//     font-family: Montserrat;
-//     font-style: normal;
-//     font-weight: bold;
-//     font-size: 12px;
-//     line-height: 15px;
-//     text-transform: uppercase;
-//     height: 44px;
-//     border: none;
-//     color: rgba(31, 32, 65, 0.5);
-//     padding: 0px;
-// }
