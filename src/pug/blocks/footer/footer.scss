@@ -1,5 +1,4 @@
 .footer{
-    height: 70px;
     width: 1160px;
     display: flex;
     align-items: center;
@@ -87,7 +86,7 @@
 }
 
 .footer-mobile {
-
+    display: flex;
     &_container{
         width: 768px;
         height: 367px;
@@ -106,10 +105,11 @@
         line-height: 17px;
         text-align: center;
         color: rgba(31, 32, 65, 0.75);
+        margin-top: 0px;
         }
 
     &__share-btns img {
-        margin-left: 20px;
-
+        margin: 0px 10px;
+        margin-top: 5px;
         }
     }

@@ -1,6 +1,68 @@
 extends ../../layouts/main/main
+
+include ../../blocks/form-group/form-group
+include ../../blocks/date-dropdown/date-dropdown
+include ../../blocks/room-card/room-card
+include ../../blocks/input/input
+include ../../blocks/input-dropdown/input-dropdown
+include ../../blocks/range-slider/range-slider
+include ../../blocks/checkbox/checkbox
+include ../../blocks/pagination/pagination
+
+
 block head
 	- let title = "Search room page";
 
+	block variables
+		- var items = [{title: "Взрослые", count: 2}, {title: "Дети", count: 0}, {title:"Младенцы", count: 4}];
+		- var items1 = [{title: "Спальни", count: 2}, {title: "Кровати", count: 0}, {title:"Ванные комнаты", count: 4}];
+
 block content 
-	main Слайдер1
+		.wrapper-searchroom
+			sidebar.searchroom 
+				.mt30
+					+form-group({title: "Даты пребывания в отеле", note: ""})
+					.row
+					+date-dropdown([{label:"", placeholder: "19 авг - 23 авг"}])
+				.mt20
+					+form-group({title: "Гости", note: ""})
+					.mt5
+						+input-dropdown({name: "", type: "text", placeholder: "Сколько гостей ", items: items, buttons: true, id: "" })
+				.mt30
+					+range-slider({title: "Диапазон цены", note: "", unit: "₽", from: 5000, to: 10000, max: 15000, description: "Стоимость за сутки пребывания в номере"})
+				.mt30
+					+form-group({title: "Правила дома", note: ""})
+				.mt5
+					+checkbox({type: "checkbox" }, [{label: "Можно курить", checked: true }, {label: "Можно с питомцами", checked: true}, {label: "Можно пригласить гостей (до 10 человек)"} ])
+				.mt30
+					+form-group({title: "Доступность", note: ""})
+					.mt5
+						+checkbox({type: "checkbox" }, [{label: "Широкий корридор", checked: false, note: "Ширина коридоров в номере не менее 91 см." }, {label: "Помошник для инвалидов", checked: false, note: "На 1 этаже вас встретит специалист  и проводит до номера."}])
+				.mt30
+					+form-group({title: "Удобства номера", note: ""})
+					.mt5
+						+input-dropdown({name: "", type: "text", placeholder: "спален ", items: items1, buttons: true, id: "" })
+				.mt30
+					+form-group({title: "Дополнительные удобства", note: ""})
+					.mt5
+						+checkbox({type: "checkbox" }, [{label: "Широкий корридор", checked: false, note: "Ширина коридоров в номере не менее 91 см." }, {label: "Помошник для инвалидов", checked: false, note: "На 1 этаже вас встретит специалист  и проводит до номера."}])
+		
+
+			main.search-room
+				h1 Номера, которые мы для вас подобрали
+				.row
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+				.row 
+					.mt40
+						+pagination({pagemax: 15, count: 180, countOnPage: 12, currentPage: 1, description: "1 - 12 из 100+ вариантов аренды"})

@@ -1,0 +1,21 @@
+.wrapper-searchroom {
+    display: flex;
+    flex-direction: row;    
+    width: 1160px;
+    margin: auto;
+    padding: 0px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.searchroom {
+    width: 266px;
+    padding: 0px;
+}
+
+main.search-room .row{
+    width: 830px;
+    display: flex;
+    flex-wrap: wrap;
+
+}

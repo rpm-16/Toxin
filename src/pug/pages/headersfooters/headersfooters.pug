@@ -5,11 +5,12 @@ block variables
   - let title = "Headers & Footers";
     
 block content
-  .mt-5
   - let curreuntPage = "О нас"
     include ../../blocks/header/header
   .mt40
   - var userName = "Юлий Цезарь"
     include ../../blocks/header/header
   .mt40
+    include ../../blocks/footer/footer
+  - var mobile = true;
     include ../../blocks/footer/footer

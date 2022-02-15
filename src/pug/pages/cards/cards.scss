@@ -1,3 +1,7 @@
-.container {display: flex;justify-content: space-between;}
+.cards-container {
+    display: flex;justify-content: space-between;
+    max-width: 1160px;
+    margin: auto;
+}
 .col-380 {width: 380px;}
 .col-320 {width: 320px;}

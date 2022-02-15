@@ -6,7 +6,7 @@
     padding: 0px 20px;
 
     .rpm-wrapper{
-        font-family: monospace;
+        font-family: Arial;
         background: rgba(0, 51, 102, 0.5);
         padding: 10px;
         color: white;
@@ -43,11 +43,18 @@
 
             &__link {
                 margin-top: 10px;
+                a {
+                    display: block;
+                    color: white;
+                    text-decoration: none;
+                    padding: 10px;
+                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                }
             }
 
             &__description {
                 margin-top: 10px;
-                font-size: 12px;
+                font-size: 14px;
                 border-top: 1px dashed #666;
                 width: 100%;
             }
@@ -67,8 +74,17 @@
         padding: 10px;
         background-color: #ccc;
         margin-bottom: 10px;
+
         &--done {
-            background-color: rgb(161, 228, 144);
+            background-color: #6fcf97;
+            flex-basis: 280px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgba(0, 51, 102, 0.2);
+            padding: 10px;
+            margin-bottom: 10px;
         }
     }
     

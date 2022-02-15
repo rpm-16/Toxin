@@ -1,5 +1,4 @@
 extends ../../layouts/uikit-layout/uikit-layout.pug
-
 include ../../blocks/dialog/dialog
 include ../../blocks/form-group/form-group
 include ../../blocks/date-dropdown/date-dropdown
@@ -12,79 +11,83 @@ include ../../blocks/price-calculator/price-calculator
 include ../../blocks/room-card/room-card
 include ../../blocks/calendar/calendar
 
+block head
+	-	let title = "Form & Elements";
 
-  block variables
-   - let title = "Cards";
-   - let items = [{title: "Взрослые", count: 0}, {title: "Дети", count: 0}];
+	block variables
+		- let items = [{title: "Взрослые", count: 2}, {title: "Дети", count: 0}, {title:"Младенцы", count: 4}];
+		- let items1 = [{title: "Спальни", count: 2}, {title: "Кровати", count: 0}, {title:"Ванные комнаты", count: 4}];
 
-  block content
-    .container
-      .col-380
-        .mt5
-          +dialog({title: "Найдём номера под ваши пожелания"})
-            .mt20
-              +date-dropdown( [{label:'Прибытие', placeholder: "ДД.ММ.ГГГГ"}, {label:'Выезд', placeholder: "19.08.2019"}])
-            .mt20
-              +form-group({title: "Гости", note: ""})
-                +input-dropdown({mclass: "input-dropdown-group__input mt5", name: 'dropdown', type: 'text', placeholder: "Сколько гостей ",
-                  items: items, showButtons: true, id: "bloc" })
-            .mt33
-              +button({name: "Подобрать номер"}).withbordericon
-            
+block content
+		.cards-container
+			.col-380
+				.mt8
+				+dialog({title: "Найдём номера под ваши пожелания"})
+					.mt22
+						+date-dropdown( [{label:'Прибытие', placeholder: "ДД.ММ.ГГГГ"}, {label:'Выезд', placeholder: "19.08.2019"}])
+					.mt20
+						+form-group({title: "Гости", note: ""})
+					.mt5
+						+input-dropdown({name:"", type: "text", placeholder: "Сколько гостей", items: items, buttons: true, id: "k"})
+					.mt33
+						+button({name: "Подобрать номер", class: "withbg", size: "w320h44", hovered: false})
+			
 
-          +dialog({title: "Регистрация аккаунта"})
-            .mt20
-              +input({name: '', type: 'text', placeholder: "Имя"})
-            .mt10
-              +input({name: '', type: 'email', placeholder: "Фамилия"})
-            .mt10
-              +radiobuttons({ type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }, {label: "Женщина"} ])
-            .mt20
-              +form-group({title: "Дата рождения", note: ""})
-                .mt5
-                  +input({name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
-            .mt20
-              +form-group({title: "Данные для входа в сервис", note: ""})
-                .mt5
-                  +input({name: '', type: 'email', placeholder: "Email"})
-                .mt10
-                  +input({name: '', type: 'password', placeholder: "Пароль"})
-                .mt10
-                  +toggle({label: "Получать спецпредложения"})
-                .mt20 
-                  +button({name: "Перейти к оплате"}).withbordericon
-                .mt30
-                  .dialog__message
-                    p.dialog__text Уже есть аккаунт на Toxin
-                    +button({name: "Войти"}).withborder                
-      .col-380
-        +dialog({number: "888", roomType: "люкс", cost: "9 990"})
-          .mt24
-            +date-dropdown( [{label:'Прибытие', placeholder: "ДД.ММ.ГГГГ"}, {label:'Выезд', placeholder: "19.08.2019"}])
-          .mt20
-            +form-group({title: "Гости", note: ""})
-              +input-dropdown({mclass: "input-dropdown-group__input mt5", name: 'dropdown', type: 'text', placeholder: "Сколько гостей ",
-                items: items, showButtons: true, id: "bloc" })
-          .mt10
-            +price-calculator()      
-          .mt20
-            +button({name: "Забронировать"}).withbordericon      
-              
-        +dialog({title: "Войти"})
-          .mt20
-            +input({name: '', type: 'email', placeholder: "Email"})
-          .mt10
-            +input({name: '', type: 'password', placeholder: "Пароль"})
-          .mt20
-          +button({name: "Войти"}).withbordericon
-          .mt30
-            .dialog__message
-              p.dialog__text нет аккаунта на Toxin?
-              +button({name: "Войти"}).withborder
-      .col-320
-        .mt1
-          .calendar
-        .mt40
-          +roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
-        .mt40
-          +roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "840", roomType: "Luxe", cost: "9990", rate: 4, reviewCount: 65})
+				+dialog({title: "Регистрация аккаунта"})
+						.mt20
+						+input({name: '', type: 'text', placeholder: "Имя"})
+						.mt10
+						+input({name: '', type: 'email', placeholder: "Фамилия"})
+						.mt10
+						+radiobuttons({ type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }, {label: "Женщина"} ])
+						.mt20
+						+form-group({title: "Дата рождения", note: ""})
+						.mt5
+						+input({name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
+						.mt20
+						+form-group({title: "Данные для входа в сервис", note: ""})
+						.mt5
+						+input({class: "", id: "", name:"none", placeholder:"Email", type:"email"})
+						.mt10
+						+input({name: '', type: 'password', placeholder: "Пароль"})
+						.mt10
+						+toggle({label: "Получать спецпредложения"})
+						.mt20 
+						+button({name: "Перейти к оплате", class: "withbg", size: "w320h44", hovered: false})
+						.mt30
+							.dialog__message
+								p.dialog__text Уже есть аккаунт на Toxin
+								+button({name: "вОЙТИ", class: "withborder", size: "w99h44", hovered: false})               
+			.col-380
+				.mt5
+				+dialog({number: "888", roomType: "люкс", cost: "9 990"})
+					.mt24
+						+date-dropdown( [{label:'Прибытие', placeholder: "ДД.ММ.ГГГГ"}, {label:'Выезд', placeholder: "19.08.2019"}])
+					.mt20
+						+form-group({title: "Гости", note: ""})
+						.mt5
+						+input-dropdown({mclass: "input-dropdown-group__input mt5", name: 'dropdown', type: 'text', placeholder: "Сколько гостей ",
+								items: items, showButtons: true, id: "bloc" })
+					.mt10
+						+price-calculator()      
+					.mt20
+						+button({name: "Забронировать", class: "withbg", size: "w320h44", hovered: false})  
+							
+				+dialog({title: "Войти"})
+					.mt20
+						+input({name: '', type: 'email', placeholder: "Email"})
+					.mt10
+						+input({name: '', type: 'password', placeholder: "Пароль"})
+					.mt20
+					+button({name: "Войти", class: "withbg", size: "w320h44", hovered: false})
+					.mt30
+						.dialog__message
+							p.dialog__text нет аккаунта на Toxin?
+							+button({name: "СОЗДАТЬ", class: "withborder", size: "w99h44", hovered: false})
+			.col-320
+				.mt1
+					+calendar()
+				.mt40
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "888", roomType: "Luxe", cost: "9990", rate: 5, reviewCount: 145})
+				.mt40
+					+roomCard({imgList: ["./img/image1.png", "./img/image2.png"],number: "840", roomType: "Luxe", cost: "9990", rate: 4, reviewCount: 65})

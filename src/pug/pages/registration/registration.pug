@@ -1,7 +1,42 @@
 extends ../../layouts/main/main
 
+include ../../blocks/dialog/dialog
+include ../../blocks/date-dropdown/date-dropdown
+include ../../blocks/input-dropdown/input-dropdown
+include ../../blocks/form-group/form-group
+include ../../blocks/buttons/buttons
+include ../../blocks/radiobuttons/radiobuttons
+include ../../blocks/toggle-buttons/toggle-buttons
+
 block head
 	- let title = "Registration Page";
 
 block content 
-	main Слайдер1
+	main.register-main
+		.wrapper
+			.w380
+				+dialog({title: "Регистрация аккаунта"})
+					.mt20
+					+input({name: '', type: 'text', placeholder: "Имя"})
+					.mt10
+					+input({name: '', type: 'email', placeholder: "Фамилия"})
+					.mt10
+					+radiobuttons({ type: "radio", name: "radio" }, [{label: "Мужчина", checked: true }, {label: "Женщина"} ])
+					.mt20
+					+form-group({title: "Дата рождения", note: ""})
+					.mt5
+						+input({name: '', type: 'text', placeholder: "ДД.ММ.ГГГГ"})
+					.mt20
+						+form-group({title: "Данные для входа в сервис", note: ""})
+						.mt5
+						+input({name: '', type: 'email', placeholder: "Email"})
+					.mt10
+						+input({name: '', type: 'password', placeholder: "Пароль"})
+					.mt10
+						+toggle({label: "Получать спецпредложения"})
+					.mt20 
+						+button({name: "Зарегистрироваться", class: "withbg", size: "w320h44", hovered: false})
+					.mt30
+						.dialog__message
+							.dialog__text Уже есть аккаунт на Toxin
+							+button({name: "Войти", class: "withborder", size: "w99h44", hovered: false})

@@ -42,7 +42,682 @@
           </ul>
         </div>
       </header>
-      <main>Слайдер1</main>
+      <div class="wrapper-searchroom">
+        <sidebar class="searchroom"> 
+          <div class="mt30">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Даты пребывания в отеле</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="row"></div>
+            <div class="date-dropdown"> 
+              <div class="date-dropdown-item">
+                <label class="data-dropdown-wrapper">
+                  <div class="date-dropdown__label"></div>
+                  <div class="date-dropdown-input-wrapper">
+                    <input class="date-dropdown__input date" type="date">
+                  </div>
+                </label>
+                <div class="date-dropdown__datepicker"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mt20">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Гости</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="input-dropdown">
+                <div class="input-group">
+                  <input class="input-group__input" id="" name="" placeholder="Сколько гостей " type="text">
+                </div>
+                <div class="input-dropdown__options">
+                  <ul class="input-dropdown__controls">
+                    <li class="input-dropdown__item">Взрослые
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Дети
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Младенцы
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="input-dropdown__buttons"> 
+                          <button class="button simple simple--undefined" type="button"><span>Очистить</span></button>
+                          <button class="button simple simple--undefined" type="button"><span>Применить</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt30">
+            <div class="form-group">
+              <label class="form-group_wrapper">
+                <div class="form-group__title">Диапазон цены</div>
+              </label>
+              <div class="range-slider"> 
+                <input class="range-slider__input" type="text" name="cost" value="" data-min="0" data-max="15000" data-from="5000" data-to="10000" data-unit="₽">
+              </div>
+              <p class="range-slider__description">Стоимость за сутки пребывания в номере</p>
+            </div>
+          </div>
+          <div class="mt30">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Правила дома</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+          </div>
+          <div class="mt5">
+            <div class="checkbox-group">
+              <ul class="checkbox-group__list">
+                <li class="checkbox__list__item">
+                  <div class="checkbox__list__input">
+                    <input type="checkbox" checked>
+                  </div>
+                  <div class="checkbox__list__label">Можно курить
+                  </div>
+                </li>
+                <li class="checkbox__list__item">
+                  <div class="checkbox__list__input">
+                    <input type="checkbox" checked>
+                  </div>
+                  <div class="checkbox__list__label">Можно с питомцами
+                  </div>
+                </li>
+                <li class="checkbox__list__item">
+                  <div class="checkbox__list__input">
+                    <input type="checkbox">
+                  </div>
+                  <div class="checkbox__list__label">Можно пригласить гостей (до 10 человек)
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt30">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Доступность</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="checkbox-group">
+                <ul class="checkbox-group__list">
+                  <li class="checkbox__list__item">
+                    <div class="checkbox__list__input">
+                      <input type="checkbox">
+                    </div>
+                    <div class="checkbox__list__label">Широкий корридор
+                      <div class="checkbox-group__note">Ширина коридоров в номере не менее 91 см.</div>
+                    </div>
+                  </li>
+                  <li class="checkbox__list__item">
+                    <div class="checkbox__list__input">
+                      <input type="checkbox">
+                    </div>
+                    <div class="checkbox__list__label">Помошник для инвалидов
+                      <div class="checkbox-group__note">На 1 этаже вас встретит специалист  и проводит до номера.</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mt30">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Удобства номера</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="input-dropdown">
+                <div class="input-group">
+                  <input class="input-group__input" id="" name="" placeholder="спален " type="text">
+                </div>
+                <div class="input-dropdown__options">
+                  <ul class="input-dropdown__controls">
+                    <li class="input-dropdown__item">Спальни
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Кровати
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                    <li class="input-dropdown__item">Ванные комнаты
+                      <div class="wrp">
+                        <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                        <button type="button" data-action="addGuest">+</button>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="input-dropdown__buttons"> 
+                          <button class="button simple simple--undefined" type="button"><span>Очистить</span></button>
+                          <button class="button simple simple--undefined" type="button"><span>Применить</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt30">
+            <div class="form-group">
+              <div class="form-group__wrapper">
+                <div class="form-group__title">Дополнительные удобства</div>
+              </div>
+              <div class="form-group__body"></div>
+            </div>
+            <div class="mt5">
+              <div class="checkbox-group">
+                <ul class="checkbox-group__list">
+                  <li class="checkbox__list__item">
+                    <div class="checkbox__list__input">
+                      <input type="checkbox">
+                    </div>
+                    <div class="checkbox__list__label">Широкий корридор
+                      <div class="checkbox-group__note">Ширина коридоров в номере не менее 91 см.</div>
+                    </div>
+                  </li>
+                  <li class="checkbox__list__item">
+                    <div class="checkbox__list__input">
+                      <input type="checkbox">
+                    </div>
+                    <div class="checkbox__list__label">Помошник для инвалидов
+                      <div class="checkbox-group__note">На 1 этаже вас встретит специалист  и проводит до номера.</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </sidebar>
+        <main class="search-room">
+          <h1>Номера, которые мы для вас подобрали</h1>
+          <div class="row">
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room-card">
+              <div class="room-card__gallery">
+                <ul>
+                  <li><img src="./img/image1.png"></li>
+                  <li><img src="./img/image2.png"></li>
+                </ul>
+                <div class="room-card__arrows"> <i class="room-card__left"></i><i class="room-card__right"></i></div>
+                <div class="room-card__controls"> 
+                  <ul>
+                    <li> </li>
+                    <li> </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="room-card__description">
+                <div class="room-card__description-title-wrapper">
+                  <h2 class="room-card__description-title">№
+                    <div class="room-card__description-number">888 </div>
+                    <div class="room-card__description-roomtype"> Luxe</div>
+                  </h2>
+                  <div class="room-card__description-cost--bold">9990₽ 
+                    <div class="room-card__description-cost">в сутки</div>
+                  </div>
+                </div>
+                <div class="room-card__description-row">
+                  <div class="room-card__rate">
+                    <div class="rate-button-wrapper">
+                      <button class="rate-button__button"><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span><span class="rate-button__icon  "></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="room-card__review--bold">145 
+                    <div class="room-card__review">Отзывов</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row"> 
+            <div class="mt40">
+              <div class="pagination-group">
+                <ul class="pagination-group__list"> 
+                  <li class="pagination-group__item current"><a class="pagination-group__link">1</a></li>
+                  <li class="pagination-group__item"><a class="pagination-group__link">2</a></li>
+                  <li class="pagination-group__item"><a class="pagination-group__link">3</a></li>
+                  <li class="pagination-group__item"><a class="pagination-group__link">...</a></li>
+                  <li class="pagination-group__item"><a class="pagination-group__link">15</a></li>
+                  <li class="pagination-group__item nextPage"><a class="pagination-group__link"><i class="arrowforward"></i></a></li>
+                </ul>
+                <div class="pagination-description">1 - 12 из 100+ вариантов аренды</div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
       <footer class="footer"> 
         <div class="footer-row">
           <div class="footer_grid">

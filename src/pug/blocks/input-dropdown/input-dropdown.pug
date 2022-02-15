@@ -1,7 +1,7 @@
 include ../input/input
 include ../buttons/buttons
 mixin input-dropdown(args)
-  - let objArgs = args;
+  - var objArgs = args;
    
   .input-dropdown
     +input(args)(readonly= "readonly")

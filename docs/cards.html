@@ -6,108 +6,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicons/favicon-32x32.png">
-    <title>Toxin</title>
+    <title>Form &amp; Elements</title>
   <script defer src="js/mainindex.js"></script><link href="./css/main.css" rel="stylesheet"></head>
   <body> 
     <div class="wrapper">
 <header class="uiheader"></header>
-      <div class="container">
+      <div class="cards-container">
         <div class="col-380">
-          <div class="mt5">
-            <section class="dialog">
-              <div class="dialog__header">
-                <h2 class="dialog__title">Найдём номера под ваши пожелания</h2>
-              </div>
-              <div class="dialog__content">
-                <form class="dialog__form" action="self" method="post">
-                  <div class="mt20">
-                    <div class="date-dropdown"> 
-                      <div class="date-dropdown-item">
-                        <label class="data-dropdown-wrapper">
-                          <div class="date-dropdown__label">Прибытие</div>
-                          <div class="date-dropdown-input-wrapper">
-                            <input class="date-dropdown__input date" type="date">
-                          </div>
-                        </label>
-                        <div class="date-dropdown__datepicker"></div>
-                      </div>
-                      <div class="date-dropdown-item">
-                        <label class="data-dropdown-wrapper">
-                          <div class="date-dropdown__label">Выезд</div>
-                          <div class="date-dropdown-input-wrapper">
-                            <input class="date-dropdown__input date" type="date">
-                          </div>
-                        </label>
-                        <div class="date-dropdown__datepicker"></div>
-                      </div>
+          <div class="mt8"></div>
+          <section class="dialog">
+            <div class="dialog__header">
+              <h2 class="dialog__title">Найдём номера под ваши пожелания</h2>
+            </div>
+            <div class="dialog__content">
+              <form class="dialog__form" action="self" method="post">
+                <div class="mt22">
+                  <div class="date-dropdown"> 
+                    <div class="date-dropdown-item">
+                      <label class="data-dropdown-wrapper">
+                        <div class="date-dropdown__label">Прибытие</div>
+                        <div class="date-dropdown-input-wrapper">
+                          <input class="date-dropdown__input date" type="date">
+                        </div>
+                      </label>
+                      <div class="date-dropdown__datepicker"></div>
+                    </div>
+                    <div class="date-dropdown-item">
+                      <label class="data-dropdown-wrapper">
+                        <div class="date-dropdown__label">Выезд</div>
+                        <div class="date-dropdown-input-wrapper">
+                          <input class="date-dropdown__input date" type="date">
+                        </div>
+                      </label>
+                      <div class="date-dropdown__datepicker"></div>
                     </div>
                   </div>
-                  <div class="mt20">
-                    <div class="form-group">
-                      <div class="form-group__wrapper">
-                        <div class="form-group__title">Гости</div>
-                      </div>
-                      <div class="form-group__body"></div>
+                </div>
+                <div class="mt20">
+                  <div class="form-group">
+                    <div class="form-group__wrapper">
+                      <div class="form-group__title">Гости</div>
                     </div>
+                    <div class="form-group__body"></div>
                   </div>
-                  <div class="mt33">
-                    <button class="button undefined undefined--undefined withbordericon" type="button"><span>Подобрать номер</span></button>
-                  </div>
-                </form>
-              </div>
-            </section>
-            <section class="dialog">
-              <div class="dialog__header">
-                <h2 class="dialog__title">Регистрация аккаунта</h2>
-              </div>
-              <div class="dialog__content">
-                <form class="dialog__form" action="self" method="post">
-                  <div class="mt20">
+                </div>
+                <div class="mt5">
+                  <div class="input-dropdown">
                     <div class="input-group">
-                      <input class="input-group__input" name="" placeholder="Имя" type="text">
+                      <input class="input-group__input" id="k" name="" placeholder="Сколько гостей" type="text">
                     </div>
-                  </div>
-                  <div class="mt10">
-                    <div class="input-group">
-                      <input class="input-group__input" name="" placeholder="Фамилия" type="email">
-                    </div>
-                  </div>
-                  <div class="mt10">
-                    <div class="radiobutton">
-                      <ul class="radiobutton__list">
-                        <li class="radiobutton__item">
-                          <input type="radio" name="radio" checked>
-                          <div class="radiobutton__label">Мужчина</div>
+                    <div class="input-dropdown__options">
+                      <ul class="input-dropdown__controls">
+                        <li class="input-dropdown__item">Взрослые
+                          <div class="wrp">
+                            <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                            <button type="button" data-action="addGuest">+</button>
+                          </div>
                         </li>
-                        <li class="radiobutton__item">
-                          <input type="radio" name="radio">
-                          <div class="radiobutton__label">Женщина</div>
+                        <li class="input-dropdown__item">Дети
+                          <div class="wrp">
+                            <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                            <button type="button" data-action="addGuest">+</button>
+                          </div>
+                        </li>
+                        <li class="input-dropdown__item">Младенцы
+                          <div class="wrp">
+                            <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                            <button type="button" data-action="addGuest">+</button>
+                          </div>
                         </li>
                       </ul>
-                    </div>
-                  </div>
-                  <div class="mt20">
-                    <div class="form-group">
-                      <div class="form-group__wrapper">
-                        <div class="form-group__title">Дата рождения</div>
+                      <div class="input-dropdown__buttons"> 
+                        <button class="button simple simple--undefined" type="button"><span>Очистить</span></button>
+                        <button class="button simple simple--undefined" type="button"><span>Применить</span></button>
                       </div>
-                      <div class="form-group__body"></div>
                     </div>
                   </div>
-                  <div class="mt20">
-                    <div class="form-group">
-                      <div class="form-group__wrapper">
-                        <div class="form-group__title">Данные для входа в сервис</div>
-                      </div>
-                      <div class="form-group__body"></div>
-                    </div>
+                </div>
+                <div class="mt33">
+                  <button class="button withbg withbg--w320h44" type="button"><span>Подобрать номер</span></button>
+                </div>
+              </form>
+            </div>
+          </section>
+          <section class="dialog">
+            <div class="dialog__header">
+              <h2 class="dialog__title">Регистрация аккаунта</h2>
+            </div>
+            <div class="dialog__content">
+              <form class="dialog__form" action="self" method="post">
+                <div class="mt20"></div>
+                <div class="input-group">
+                  <input class="input-group__input" name="" placeholder="Имя" type="text">
+                </div>
+                <div class="mt10"></div>
+                <div class="input-group">
+                  <input class="input-group__input" name="" placeholder="Фамилия" type="email">
+                </div>
+                <div class="mt10"></div>
+                <div class="radiobutton">
+                  <ul class="radiobutton__list">
+                    <li class="radiobutton__item">
+                      <input type="radio" name="radio" checked>
+                      <div class="radiobutton__label">Мужчина</div>
+                    </li>
+                    <li class="radiobutton__item">
+                      <input type="radio" name="radio">
+                      <div class="radiobutton__label">Женщина</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt20"></div>
+                <div class="form-group">
+                  <div class="form-group__wrapper">
+                    <div class="form-group__title">Дата рождения</div>
                   </div>
-                </form>
-              </div>
-            </section>
-          </div>
+                  <div class="form-group__body"></div>
+                </div>
+                <div class="mt5"></div>
+                <div class="input-group">
+                  <input class="input-group__input" name="" placeholder="ДД.ММ.ГГГГ" type="text">
+                </div>
+                <div class="mt20"></div>
+                <div class="form-group">
+                  <div class="form-group__wrapper">
+                    <div class="form-group__title">Данные для входа в сервис</div>
+                  </div>
+                  <div class="form-group__body"></div>
+                </div>
+                <div class="mt5"></div>
+                <div class="input-group">
+                  <input class="input-group__input" id="" name="none" placeholder="Email" type="email">
+                </div>
+                <div class="mt10"></div>
+                <div class="input-group">
+                  <input class="input-group__input" name="" placeholder="Пароль" type="password">
+                </div>
+                <div class="mt10"></div>
+                <div class="toggle">
+                  <ul class="toggle__list">
+                    <li class="toggle__item">
+                      <input class="toggle__input" type="checkbox">
+                      <div class="toggle__label">Получать спецпредложения</div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="mt20"> </div>
+                <button class="button withbg withbg--w320h44" type="button"><span>Перейти к оплате</span></button>
+                <div class="mt30">
+                  <div class="dialog__message">
+                    <p class="dialog__text">Уже есть аккаунт на Toxin</p>
+                    <button class="button withborder withborder--w99h44" type="button"><span>вОЙТИ</span></button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
         </div>
         <div class="col-380">
+          <div class="mt5"></div>
           <section class="dialog">
             <div class="dialog__header">
               <div class="dialog__title-wrapper">
@@ -152,6 +209,34 @@
                     </div>
                     <div class="form-group__body"></div>
                   </div>
+                  <div class="mt5"></div>
+                  <div class="input-dropdown">
+                    <div class="input-group">
+                      <input class="input-group__input" id="bloc" name="dropdown" placeholder="Сколько гостей " type="text">
+                    </div>
+                    <div class="input-dropdown__options">
+                      <ul class="input-dropdown__controls">
+                        <li class="input-dropdown__item">Взрослые
+                          <div class="wrp">
+                            <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">2</span>
+                            <button type="button" data-action="addGuest">+</button>
+                          </div>
+                        </li>
+                        <li class="input-dropdown__item">Дети
+                          <div class="wrp">
+                            <button type="button" data-action="delGuest" disabled>-</button><span class="input-dropdown__itemcount">0</span>
+                            <button type="button" data-action="addGuest">+</button>
+                          </div>
+                        </li>
+                        <li class="input-dropdown__item">Младенцы
+                          <div class="wrp">
+                            <button type="button" data-action="delGuest">-</button><span class="input-dropdown__itemcount">4</span>
+                            <button type="button" data-action="addGuest">+</button>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
                 <div class="mt10">
                   <table class="price">
@@ -178,7 +263,7 @@
                   </table>
                 </div>
                 <div class="mt20">
-                  <button class="button undefined undefined--undefined withbordericon" type="button"><span>Забронировать</span></button>
+                  <button class="button withbg withbg--w320h44" type="button"><span>Забронировать</span></button>
                 </div>
               </form>
             </div>
@@ -200,11 +285,11 @@
                   </div>
                 </div>
                 <div class="mt20"></div>
-                <button class="button undefined undefined--undefined withbordericon" type="button"><span>Войти</span></button>
+                <button class="button withbg withbg--w320h44" type="button"><span>Войти</span></button>
                 <div class="mt30">
                   <div class="dialog__message">
                     <p class="dialog__text">нет аккаунта на Toxin?</p>
-                    <button class="button undefined undefined--undefined withborder" type="button"><span>Войти</span></button>
+                    <button class="button withborder withborder--w99h44" type="button"><span>СОЗДАТЬ</span></button>
                   </div>
                 </div>
               </form>
